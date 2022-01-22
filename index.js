@@ -21,7 +21,7 @@ const products = new Container(`./products.txt`);
 
 // llamado de prueba para crear el txt con array vacío
 
-// products.write(JSON.stringify([], null, 2));
+// products.write([]);
 
 // llamado de prueba para agregar objeto
 

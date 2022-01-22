@@ -7,7 +7,10 @@ export default class Container {
 
   async write(data) {
     try {
-      return await fs.promises.writeFile(`${this.fileName}`, `${data}`);
+      return await fs.promises.writeFile(
+        `${this.fileName}`,
+        `${JSON.stringify(data, null, 2)}`
+      );
     } catch (err) {
       console.log(err);
     }
@@ -45,7 +48,7 @@ export default class Container {
           ...obj,
         };
         data.push(newObject);
-        await this.write(JSON.stringify(data, null, 2));
+        await this.write(data);
         return id;
       }
     } catch (err) {
@@ -64,7 +67,7 @@ export default class Container {
       let data = await this.getAll();
       if (data.find((product) => product.id == id)) {
         let newData = data.filter((data) => data.id != id);
-        await this.write(JSON.stringify(newData, null, 2));
+        await this.write(newData);
         console.log(`Producto borrado`);
       } else {
         console.log(`No existe un producto con ese id`);
@@ -75,7 +78,7 @@ export default class Container {
   }
   async deleteAll() {
     try {
-      await this.write(JSON.stringify([], null, 2));
+      await this.write([]);
       console.log(`Todos los productos fueron borrados`);
     } catch (err) {
       console.log(err);
