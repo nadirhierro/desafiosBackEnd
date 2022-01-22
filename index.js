@@ -1,44 +1,39 @@
 import Container from "./container.js";
+import express from "express";
 
-// productos sueltos y container de productos
-const product1 = {
-  title: "Lapicera",
-  price: 12.3,
-  thumbnail: "https://www.unsitio.com",
-};
-const product2 = {
-  title: "Lápiz",
-  price: 5.5,
-  thumbnail: "https://www.unsitio.com",
-};
-const product3 = {
-  title: "Cuaderno",
-  price: 12.45,
-  thumbnail: "https://www.unsitio.com",
-};
+const products = new Container("./products.txt");
 
-const products = new Container(`./products.txt`);
+const app = express();
 
-// llamado de prueba para crear el txt con array vacío
+const PORT = 8080;
 
-// products.write([]);
+app.get("/", (req, res, next) => {
+  res.send({ mensaje: "hola mundo" });
+});
 
-// llamado de prueba para agregar objeto
+app.get("/productos", async (req, res, next) => {
+  try {
+    let data = await products.getAll();
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-// products.save(product1);
+app.get("/productoRandom", async (req, res, next) => {
+  try {
+    let data = await products.getAll();
+    let idRandom = () => {
+      return Math.floor(Math.random() * data.length + 1);
+    };
+    let product = data.find((producto) => producto.id == idRandom());
+    res.json(product);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-// llamado para getById
-
-// products.getById(5);
-
-// llamado para getAll
-
-// products.getAll();
-
-// llamado para deleteById
-
-// products.deleteById(2);
-
-// llamado para deleteAll
-
-// products.deleteAll();
+const server = app.listen(PORT, () => {
+  console.log(`Servidor http escuchando en el puerto ${server.address().port}`);
+});
+server.on("error", (error) => console.log(`Error en servidor ${error}`));
