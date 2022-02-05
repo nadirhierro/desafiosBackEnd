@@ -2,12 +2,13 @@ import express from "express";
 import Products from "./products.js";
 
 const { Router } = express;
+
 const products = new Products();
 
 let routerProductos = new Router();
 
 routerProductos.get("/", (req, res, next) => {
-  res.json(products.products);
+  res.render("index", { products: products.products });
 });
 
 routerProductos.get("/:id", (req, res, next) => {
@@ -23,7 +24,7 @@ routerProductos.get("/:id", (req, res, next) => {
 routerProductos.post("/", (req, res, next) => {
   let product = req.body;
   let newProduct = products.save(product);
-  res.json({ agregado: newProduct });
+  res.redirect("/");
 });
 
 routerProductos.put("/:id", (req, res, next) => {

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,7 +16,7 @@
       <div class="row justify-content-center">
         <div class="col-6 mt-2">
           <h2 class="text-center">Agregar un producto</h2>
-          <form id="products" action="/api/productos" method="POST">
+          <form id="products" action="/productos" method="POST">
             <div class="mb-3">
               <label for="title" class="form-label">Product title</label>
               <input type="text" class="form-control" name="title" />
@@ -35,6 +34,13 @@
             <button type="submit" class="btn btn-primary">Agregar</button>
           </form>
         </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <a
+          href="./productos"
+          class="col-2 btn rounded-pill bg-primary text-white"
+          >Ver productos</a
+        >
       </div>
     </main>
     <script

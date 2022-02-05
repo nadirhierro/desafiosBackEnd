@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+  <h3 class="mb-3 text-center">Lista de productos</h3>
+  <% if(products.length > 0){ %>
+  <div class="col-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% products.forEach(function(product){ %>
+        <tr>
+          <th scope="row"><%= product.title %></th>
+          <td><%= product.price %></td>
+          <td>
+            <img
+              src="<%= product.thumbnail %>"
+              alt="<%= product.title %> foto"
+              class="img-fluid"
+              style="width: 50px; height: 50px"
+            />
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <% } else{ %>
+  <div class="col-2 alert alert-dark mt-5" role="alert">No hay productos!</div>
+  <% } %>
+  <div class="col-12 d-flex justify-content-center mt-5">
+    <a href="./" class="btn btn-primary text-white">Agregar producto</a>
+  </div>
+</div>
