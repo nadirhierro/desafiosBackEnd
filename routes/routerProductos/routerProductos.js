@@ -11,6 +11,12 @@ routerProductos.get("/", (req, res, next) => {
   res.render("index", { products: products.products });
 });
 
+routerProductos.post("/", (req, res, next) => {
+  let product = req.body;
+  let newProduct = products.save(product);
+  res.redirect("/");
+});
+
 routerProductos.get("/:id", (req, res, next) => {
   let { id } = req.params;
   let product = products.find(Number(id));
@@ -19,12 +25,6 @@ routerProductos.get("/:id", (req, res, next) => {
   } else {
     res.json({ error: `No existe un producto con el id ${id}` });
   }
-});
-
-routerProductos.post("/", (req, res, next) => {
-  let product = req.body;
-  let newProduct = products.save(product);
-  res.redirect("/");
 });
 
 routerProductos.put("/:id", (req, res, next) => {
