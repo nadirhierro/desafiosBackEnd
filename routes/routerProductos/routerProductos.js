@@ -8,7 +8,7 @@ const products = new Products();
 let routerProductos = new Router();
 
 routerProductos.get("/", (req, res, next) => {
-  res.render("index", { products: products.products });
+  res.json(products.products);
 });
 
 routerProductos.post("/", (req, res, next) => {
