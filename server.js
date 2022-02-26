@@ -4,7 +4,7 @@ import { Server } from "socket.io";
 import { createServer } from "http";
 import fetch from "node-fetch";
 import cors from "cors";
-import { config, db } from "./config/index.js";
+import { config } from "./config/index.js";
 import routerProductos from "./routes/routerProductos/routerProductos.js";
 import routerMessages from "./routes/routerMessages/routerMessages.js";
 

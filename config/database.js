@@ -9,18 +9,40 @@ let mysql = knex({
   pool: { min: 0, max: 7 },
 });
 
-class Database {
+let sqlite3 = knex({
+  client: "sqlite3",
+  connection: {
+    filename: "./DB/ecommerce.sqlite",
+  },
+  useNullAsDefault: true,
+});
+
+class DatabaseProducts {
   static client;
   constructor() {
-    if (Database.client) {
-      return Database.client;
+    if (DatabaseProducts.client) {
+      return DatabaseProducts.client;
     }
-    Database.client = mysql;
-    this.client = Database.client;
+    DatabaseProducts.client = mysql;
+    this.client = DatabaseProducts.client;
   }
 }
 
-let database = new Database();
-let db_knex = database.client;
+class DatabaseMessages {
+  static client;
+  constructor() {
+    if (DatabaseMessages.client) {
+      return DatabaseMessages.client;
+    }
+    DatabaseMessages.client = sqlite3;
+    this.client = DatabaseMessages.client;
+  }
+}
 
-export default db_knex;
+let databaseMysql = new DatabaseProducts();
+let db_knex_mysql = databaseMysql.client;
+
+let databaseSqlite3 = new DatabaseMessages();
+let db_knex_sqlite3 = databaseSqlite3.client;
+
+export { db_knex_mysql, db_knex_sqlite3 };

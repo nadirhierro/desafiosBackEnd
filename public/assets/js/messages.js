@@ -3,7 +3,7 @@ let formChat = document.getElementById("messages");
 // template para chat
 let templateChat = `
     {{#each messages}}
-    <b>{{this.email}}</b> <span class="time">{{this.time}} :</span> <span class="mensaje">{{this.message}}</span> </br>
+    <b>{{this.email}}</b> <span class="time">{{this.timestamp}} :</span> <span class="mensaje">{{this.message}}</span> </br>
     {{/each}}
 `;
 
@@ -30,6 +30,7 @@ socket.on("chat", (data) => {
       return response.json();
     })
     .then(function (json) {
+      console.log(json);
       const template = Handlebars.compile(templateChat);
       const html = template({ messages: json });
       document.getElementById("mensajes").innerHTML = html;

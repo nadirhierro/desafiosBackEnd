@@ -1,14 +1,14 @@
-import db_knex from "../../config/database.js";
+import { db_knex_mysql } from "../../config/database.js";
 
 export default class Products {
   constructor() {
-    this.database = db_knex;
+    this.db_knex = db_knex_mysql;
     this.table = "products";
   }
 
   async getAll() {
     try {
-      let products = await this.database.from(this.table);
+      let products = await this.db_knex.from(this.table);
       let productsMapped = products.map((row) => {
         return {
           id: row.id,
@@ -25,7 +25,7 @@ export default class Products {
 
   async find(id) {
     try {
-      let product = await this.database.from(this.table).where("id", "=", id);
+      let product = await this.db_knex.from(this.table).where("id", "=", id);
       return product;
     } catch (err) {
       console.log(err);
@@ -34,7 +34,7 @@ export default class Products {
 
   async save(product) {
     try {
-      let saved = await this.database.from(this.table).insert(product);
+      let saved = await this.db_knex.from(this.table).insert(product);
       console.log(saved);
       return saved;
     } catch (err) {
@@ -44,7 +44,7 @@ export default class Products {
 
   async change(id, product) {
     try {
-      let changed = await this.database
+      let changed = await this.db_knex
         .from(this.table)
         .where("id", "=", id)
         .update(product);
@@ -57,7 +57,7 @@ export default class Products {
 
   async delete(id) {
     try {
-      let deleted = await this.database
+      let deleted = await this.db_knex
         .from(this.table)
         .where("id", "=", id)
         .del();
@@ -67,47 +67,4 @@ export default class Products {
       console.log(err);
     }
   }
-  // find(id) {
-  //   return this.products.find((product) => product.id == id);
-  // }
-  // save(obj) {
-  //   let id = 1;
-  //   if (this.products.length > 0) {
-  //     let ids = this.products.map((product) => product.id);
-  //     id = Math.max.apply(null, ids) + 1;
-  //   }
-  //   let newObject = {
-  //     id: id,
-  //     ...obj,
-  //   };
-  //   this.products.push(newObject);
-  //   return newObject;
-  // }
-  // change(id, obj) {
-  //   let productToChange = this.products.find((product) => product.id == id);
-  //   let newProduct = {};
-  //   if (productToChange) {
-  //     this.products.forEach((product) => {
-  //       if (product.id == id) {
-  //         product.title = obj.title;
-  //         product.price = obj.price;
-  //         product.thumbnail = obj.thumbnail;
-  //         newProduct = product;
-  //       }
-  //     });
-  //     return newProduct;
-  //   } else {
-  //     return null;
-  //   }
-  // }
-  // delete(id) {
-  //   let productToDelete = this.products.find((product) => product.id == id);
-  //   if (productToDelete) {
-  //     let index = this.products.indexOf(productToDelete);
-  //     this.products.splice(index, 1);
-  //     return id;
-  //   } else {
-  //     return null;
-  //   }
-  // }
 }

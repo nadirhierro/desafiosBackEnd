@@ -1,9 +1,9 @@
-import Container from "./container.js";
+import Messages from "./messages.js";
 import express from "express";
 
 const { Router } = express;
 
-const messages = new Container(`./messages.txt`);
+const messages = new Messages(`./messages.txt`);
 
 let routerMessages = new Router();
 
