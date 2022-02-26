@@ -3,6 +3,8 @@ import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 import { createServer } from "http";
 import fetch from "node-fetch";
+import cors from "cors";
+import { config, db } from "./config/index.js";
 import routerProductos from "./routes/routerProductos/routerProductos.js";
 import routerMessages from "./routes/routerMessages/routerMessages.js";
 
@@ -10,12 +12,13 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
-const PORT = 8080;
+const PORT = config.port;
 
 app.engine("handlebars", handlebars.engine());
 app.set("views", "views");
 app.set("view engine", "handlebars");
 
+app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));

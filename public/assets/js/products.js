@@ -45,7 +45,7 @@ formProducts.addEventListener("submit", (event) => {
 
   let product = {
     title: title,
-    price: price,
+    price: Number(price),
     thumbnail: thumbnail,
   };
   socket.emit("products", product);
