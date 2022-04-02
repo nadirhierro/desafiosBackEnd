@@ -3,13 +3,13 @@ import express from "express";
 
 const { Router } = express;
 
-const messages = new Messages(`./messages.txt`);
+const messages = new Messages();
 
 let routerMessages = new Router();
 
 routerMessages.get("/", async (req, res, next) => {
   try {
-    let data = await messages.getAll();
+    let data = await messages.getAllNormalized();
     res.json(data);
   } catch (err) {
     console.log(err);

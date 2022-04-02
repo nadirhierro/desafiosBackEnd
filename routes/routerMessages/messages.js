@@ -1,36 +1,70 @@
-import { db_knex_sqlite3 } from "../../config/database.js";
+import * as fs from "node:fs";
+import fileContainer from "../../components/containers/fileContainer.js";
+import normalizr from "normalizr";
 import moment from "moment";
+import util from "util";
 
-export default class Messages {
-  constructor() {
-    this.db_knex = db_knex_sqlite3;
-    this.table = "messages";
+// Normalize y schemas
+const normalize = normalizr.normalize;
+const schema = normalizr.schema;
+
+const authorSchema = new schema.Entity("authors", {}, { idAttribute: "email" });
+const messageSchema = new schema.Entity(
+  "messages",
+  { author: authorSchema },
+  { idAttribute: "id" }
+);
+const posts = new schema.Entity("posts", {
+  messages: [messageSchema],
+});
+
+// Función print
+function print(obj) {
+  console.log(util.inspect(obj, false, 12, true));
+}
+export default class Messages extends fileContainer {
+  constructor(fileName) {
+    super(fileName);
+    this.fileName = "./data/messages.json";
   }
 
-  async getAll() {
+  // Normalizar productos para el front
+  async getAllNormalized() {
     try {
-      let data = await this.db_knex.from(this.table);
-      if (data.length > 0) {
-        return data;
+      let data = await fs.promises.readFile(`${this.fileName}`, "utf-8");
+      if (data) {
+        const dataParsed = JSON.parse(data);
+        const normalizedData = normalize(dataParsed, posts);
+        print(normalizedData);
+        return normalizedData;
       } else {
         return [];
       }
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 
+  // Guardar productos
   async save(obj) {
     try {
-      let newObj = {
+      let object = await this.getAll();
+      let data = object.messages;
+      let id = 1;
+      if (data.length > 0) {
+        let ids = data.map((item) => item.id);
+        id = Math.max.apply(null, ids) + 1;
+      }
+      let newObject = {
+        id: id,
         timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
         ...obj,
       };
-      let saved = await this.db_knex.from(this.table).insert(newObj);
-      console.log(saved);
-      return saved;
+      data.push(newObject);
+      await this.write({ id: "messages", messages: data });
+      return id;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 }

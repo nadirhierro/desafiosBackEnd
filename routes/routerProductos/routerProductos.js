@@ -1,15 +1,17 @@
 import express from "express";
 import Products from "./products.js";
+import ProductsTest from "./products-test.js";
 
 const { Router } = express;
 
 const products = new Products();
+const productsFake = new ProductsTest();
 
 let routerProductos = new Router();
 
 routerProductos.get("/", async (req, res, next) => {
   try {
-    let allProducts = await products.getAll();
+    let allProducts = productsFake.getProducts();
     res.json(allProducts);
   } catch (err) {
     console.log(err);
