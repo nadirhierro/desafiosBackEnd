@@ -1,27 +1,17 @@
 import * as fs from "node:fs";
 import fileContainer from "../../components/containers/fileContainer.js";
-import normalizr from "normalizr";
+import {
+  normalize,
+  posts,
+} from "../../utils/messagesNormalizr/messagesNormalizr.js";
 import moment from "moment";
 import util from "util";
-
-// Normalize y schemas
-const normalize = normalizr.normalize;
-const schema = normalizr.schema;
-
-const authorSchema = new schema.Entity("authors", {}, { idAttribute: "email" });
-const messageSchema = new schema.Entity(
-  "messages",
-  { author: authorSchema },
-  { idAttribute: "id" }
-);
-const posts = new schema.Entity("posts", {
-  messages: [messageSchema],
-});
 
 // Función print
 function print(obj) {
   console.log(util.inspect(obj, false, 12, true));
 }
+
 export default class Messages extends fileContainer {
   constructor(fileName) {
     super(fileName);
