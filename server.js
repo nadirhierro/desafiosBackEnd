@@ -2,15 +2,21 @@ import express from "express";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 import { createServer } from "http";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 import fetch from "node-fetch";
 import cors from "cors";
-import { config } from "./config/index.js";
+import { config, db } from "./config/index.js";
 import routerProductos from "./routes/routerProductos/routerProductos.js";
 import routerMessages from "./routes/routerMessages/routerMessages.js";
 
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
+
+// Opciones para MongoAtlas
+const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 const PORT = config.port;
 
@@ -22,8 +28,49 @@ app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cookieParser());
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl: db.mongo_atlas,
+      mongoOptions: advancedOptions,
+      autoRemove: "native",
+    }),
+    secret: "floyd",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
 app.use("/productos", routerProductos);
 app.use("/mensajes", routerMessages);
+
+app.get("/", (req, res, next) => {
+  //Agrego 10 minutos en cada refresh
+  let tenMinutes = 10 * 60 * 1000;
+  req.session.cookie.expires = new Date(Date.now() + tenMinutes);
+  req.session.cookie.maxAge = tenMinutes;
+  res.render("index", { logged: req.session.name, name: req.session.name });
+});
+
+app.get("/login", (req, res, next) => {
+  let name = req.query.name;
+  req.session.name = name;
+  console.log(req.session);
+  res.redirect("/");
+});
+
+app.get("/logout", (req, res, next) => {
+  let name = req.session.name;
+
+  req.session.destroy((err) => {
+    if (!err) {
+      res.render("logout", { name: name });
+    } else {
+      res.send({ status: "logout ERROR", body: err });
+    }
+  });
+});
 
 // inicialización del server socket
 io.on("connection", (socket) => {

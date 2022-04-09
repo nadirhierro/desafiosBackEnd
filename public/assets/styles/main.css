@@ -17,3 +17,8 @@ b {
   align-self: center;
   max-width: 20rem;
 }
+
+.bienvenido {
+  background-color: rgb(71, 102, 71);
+  margin: 3rem 40rem;
+}
