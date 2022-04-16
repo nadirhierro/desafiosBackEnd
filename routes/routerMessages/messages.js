@@ -25,7 +25,6 @@ export default class Messages extends fileContainer {
       if (data) {
         const dataParsed = JSON.parse(data);
         const normalizedData = normalize(dataParsed, posts);
-        print(normalizedData);
         return normalizedData;
       } else {
         return [];

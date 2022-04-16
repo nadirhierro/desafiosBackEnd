@@ -4,13 +4,16 @@ import { Server } from "socket.io";
 import { createServer } from "http";
 import cookieParser from "cookie-parser";
 import session from "express-session";
+import passport from "passport";
 import MongoStore from "connect-mongo";
 import fetch from "node-fetch";
 import cors from "cors";
 import { config, db } from "./config/index.js";
+import routerRoot from "./routes/routerRoot/routerRoot.js";
 import routerProductos from "./routes/routerProductos/routerProductos.js";
 import routerMessages from "./routes/routerMessages/routerMessages.js";
 
+// Inicialización de server y sockets
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
@@ -18,12 +21,15 @@ const io = new Server(httpServer);
 // Opciones para MongoAtlas
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
+// Puerto
 const PORT = config.port;
 
+// Motor de plantilla - handlebars
 app.engine("handlebars", handlebars.engine());
 app.set("views", "views");
 app.set("view engine", "handlebars");
 
+// Middlewares nivel app
 app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,41 +42,24 @@ app.use(
       mongoOptions: advancedOptions,
       autoRemove: "native",
     }),
-    secret: "floyd",
+    cookie: {
+      httpOnly: false,
+      secure: false,
+      maxAge: 600000,
+    },
+    secret: config.sessionSecret,
+    rolling: true,
     resave: true,
     saveUninitialized: true,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
+// Rutas
 app.use("/productos", routerProductos);
 app.use("/mensajes", routerMessages);
-
-app.get("/", (req, res, next) => {
-  //Agrego 10 minutos en cada refresh
-  let tenMinutes = 10 * 60 * 1000;
-  req.session.cookie.expires = new Date(Date.now() + tenMinutes);
-  req.session.cookie.maxAge = tenMinutes;
-  res.render("index", { logged: req.session.name, name: req.session.name });
-});
-
-app.get("/login", (req, res, next) => {
-  let name = req.query.name;
-  req.session.name = name;
-  console.log(req.session);
-  res.redirect("/");
-});
-
-app.get("/logout", (req, res, next) => {
-  let name = req.session.name;
-
-  req.session.destroy((err) => {
-    if (!err) {
-      res.render("logout", { name: name });
-    } else {
-      res.send({ status: "logout ERROR", body: err });
-    }
-  });
-});
+app.use("/", routerRoot);
 
 // inicialización del server socket
 io.on("connection", (socket) => {

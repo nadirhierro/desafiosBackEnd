@@ -4,6 +4,10 @@ dotenv.config({ silent: true });
 let config = {
   dev: process.env.NODE_ENV !== "production",
   port: process.env.PORT,
+  sessionSecret: process.env.SESSION_SECRET,
+  maxAge: process.env.TIEMPO_EXPIRACION,
+  facebookID: process.env.FACEBOOK_APP_ID,
+  facebookSecret: process.env.FACEBOOK_APP_SECRET,
 };
 
 let db = {
