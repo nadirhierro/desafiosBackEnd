@@ -2,8 +2,10 @@ import dotenv from "dotenv";
 import _yargs from "yargs";
 dotenv.config({ silent: true });
 
+// Yargs
 const yargs = _yargs(process.argv.slice(2));
 
+// Seteo el puerto default y limpio los args
 const args = yargs.default({
   port: process.env.DEFAULT_PORT,
 }).argv;

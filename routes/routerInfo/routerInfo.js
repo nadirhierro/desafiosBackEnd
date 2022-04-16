@@ -4,6 +4,8 @@ const { Router } = express;
 
 let routerInfo = new Router();
 
+// Presentación de la información solicitada
+
 routerInfo.get("/", (req, res, next) => {
   let data = {
     args: process.argv.slice(2),
