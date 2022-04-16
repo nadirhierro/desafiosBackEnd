@@ -1,9 +1,21 @@
 import dotenv from "dotenv";
+import _yargs from "yargs";
 dotenv.config({ silent: true });
+
+const yargs = _yargs(process.argv.slice(2));
+
+const args = yargs.default({
+  port: process.env.DEFAULT_PORT,
+}).argv;
+delete args["_"];
+delete args["$0"];
+
+console.log(args);
 
 let config = {
   dev: process.env.NODE_ENV !== "production",
-  port: process.env.PORT,
+  port: args.port,
+  host: process.env.HOST,
   sessionSecret: process.env.SESSION_SECRET,
   maxAge: process.env.TIEMPO_EXPIRACION,
   facebookID: process.env.FACEBOOK_APP_ID,

@@ -12,6 +12,8 @@ import { config, db } from "./config/index.js";
 import routerRoot from "./routes/routerRoot/routerRoot.js";
 import routerProductos from "./routes/routerProductos/routerProductos.js";
 import routerMessages from "./routes/routerMessages/routerMessages.js";
+import routerInfo from "./routes/routerInfo/routerInfo.js";
+import routerRandoms from "./routes/routerRandoms/routerRandoms.js";
 
 // Inicialización de server y sockets
 const app = express();
@@ -20,9 +22,6 @@ const io = new Server(httpServer);
 
 // Opciones para MongoAtlas
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-
-// Puerto
-const PORT = config.port;
 
 // Motor de plantilla - handlebars
 app.engine("handlebars", handlebars.engine());
@@ -57,9 +56,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Rutas
+app.use("/", routerRoot);
 app.use("/productos", routerProductos);
 app.use("/mensajes", routerMessages);
-app.use("/", routerRoot);
+app.use("/info", routerInfo);
+app.use("/randoms", routerRandoms);
 
 // inicialización del server socket
 io.on("connection", (socket) => {
@@ -105,6 +106,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(PORT, () => {
-  console.log(`Servidor funcionando en http://localhost:${PORT}`);
+httpServer.listen(config.port, config.host, () => {
+  console.log(`Servidor funcionando en http://${config.host}:${config.port}`);
 });
