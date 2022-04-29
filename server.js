@@ -36,7 +36,7 @@ app.set("view engine", "handlebars");
 app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 app.use(cookieParser());
 app.use(
   session({
@@ -64,7 +64,7 @@ app.use("/", routerRoot);
 app.use("/productos", routerProductos);
 app.use("/mensajes", routerMessages);
 app.use("/info", routerInfo);
-app.use("/randoms", routerRandoms);
+app.use("/api/randoms", routerRandoms);
 
 // inicialización del server socket
 io.on("connection", (socket) => {
