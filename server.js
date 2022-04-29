@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import passport from "passport";
 import MongoStore from "connect-mongo";
+import cluster from "cluster";
+import os from "os";
 import fetch from "node-fetch";
 import cors from "cors";
 import { config, db } from "./config/index.js";
@@ -19,6 +21,8 @@ import routerRandoms from "./routes/routerRandoms/routerRandoms.js";
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
+
+const numCPUs = os.cpus().length;
 
 // Opciones para MongoAtlas
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
@@ -106,6 +110,26 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(config.port, config.host, () => {
+// Si el parametro mode es FORK, se inicia el server en modo fork
+// Si es CLUSTER, se inicia en modo cluster
+if (config.mode == "FORK") {
+  httpServer.listen(config.port, config.host, () => {});
   console.log(`Servidor funcionando en http://${config.host}:${config.port}`);
-});
+} else if (config.mode == "CLUSTER") {
+  if (cluster.isPrimary) {
+    console.log(`Proceso principal ${process.pid} ejecutándose`);
+
+    for (let i = 0; i < numCPUs; i++) {
+      cluster.fork();
+    }
+    cluster.on("exit", (worker, code, signal) => {
+      console.log(`Worker ${worker.process.pid} muerto`);
+      cluster.fork();
+    });
+  } else {
+    httpServer.listen(config.port, config.host, () => {});
+    console.log(
+      `Servidor funcionando en http://${config.host}:${config.port} || Worker ${process.pid}`
+    );
+  }
+}

@@ -8,6 +8,7 @@ const yargs = _yargs(process.argv.slice(2));
 // Seteo el puerto default y limpio los args
 const args = yargs.default({
   port: process.env.DEFAULT_PORT,
+  mode: process.env.MODE,
 }).argv;
 delete args["_"];
 delete args["$0"];
@@ -17,6 +18,7 @@ console.log(args);
 let config = {
   dev: process.env.NODE_ENV !== "production",
   port: args.port,
+  mode: args.mode,
   host: process.env.HOST,
   sessionSecret: process.env.SESSION_SECRET,
   maxAge: process.env.TIEMPO_EXPIRACION,
