@@ -8,6 +8,9 @@ import passport from "passport";
 import MongoStore from "connect-mongo";
 import cluster from "cluster";
 import os from "os";
+import responseTime from "response-time";
+import logger from "./utils/loggers/log4js.js";
+import log from "./utils/loggers/logInfo.js";
 import fetch from "node-fetch";
 import cors from "cors";
 import { config, db } from "./config/index.js";
@@ -58,6 +61,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(responseTime());
+app.use(log);
 
 // Rutas
 app.use("/", routerRoot);
@@ -65,6 +70,11 @@ app.use("/productos", routerProductos);
 app.use("/mensajes", routerMessages);
 app.use("/info", routerInfo);
 app.use("/api/randoms", routerRandoms);
+
+app.get("*", (req, res, next) => {
+  logger.warn(`Path: ${req.path}, Method: ${req.method}`);
+  res.json({ errorType: "404" });
+});
 
 // inicialización del server socket
 io.on("connection", (socket) => {

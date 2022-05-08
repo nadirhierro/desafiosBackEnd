@@ -1,0 +1,1027 @@
+Statistical profiling result from conConsole_iso.log, (7675 ticks, 4 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   5332   69.5%          /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      3    0.0%          [vdso]
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     29    0.4%    1.2%  LazyCompile: *wrap /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:101:22
+     22    0.3%    0.9%  LazyCompile: *resolve node:path:1091:10
+     21    0.3%    0.9%  LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+     17    0.2%    0.7%  LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+     17    0.2%    0.7%  LazyCompile: *SourceNode_walk /home/nadir/Desktop/desafiosBackEnd/node_modules/source-map/lib/source-node.js:221:53
+     15    0.2%    0.6%  LazyCompile: *deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+     13    0.2%    0.6%  LazyCompile: *serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      9    0.1%    0.4%  RegExp: ^(?:[^\x00]*?(?=(\{\{)))
+      9    0.1%    0.4%  LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:176:16
+      8    0.1%    0.3%  LazyCompile: *step /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+      7    0.1%    0.3%  LazyCompile: *write node:buffer:1051:40
+      7    0.1%    0.3%  LazyCompile: *emit node:events:474:44
+      7    0.1%    0.3%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      6    0.1%    0.3%  RegExp: (^|\r?\n)\s*?$
+      6    0.1%    0.3%  LazyCompile: *anonymous /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:12:42
+      4    0.1%    0.2%  LazyCompile: *size /home/nadir/Desktop/desafiosBackEnd/node_modules/denque/index.js:94:38
+      4    0.1%    0.2%  LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/build/main/lib/MongoStore.js:236:10
+      4    0.1%    0.2%  Function: ^checkIn /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:149:12
+      3    0.0%    0.1%  RegExp: ^(?:\{\{(~)?\s*else\s*(~)?\}\})
+      3    0.0%    0.1%  RegExp: (?:\r\n?|\n).*
+      3    0.0%    0.1%  LazyCompile: *write node:buffer:593:12
+      3    0.0%    0.1%  LazyCompile: *slice node:buffer:594:12
+      3    0.0%    0.1%  LazyCompile: *serializeLong /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:300:23
+      3    0.0%    0.1%  LazyCompile: *relative node:path:1190:11
+      3    0.0%    0.1%  LazyCompile: *readableAddChunk node:internal/streams/readable:236:26
+      3    0.0%    0.1%  LazyCompile: *normalizeString node:path:66:25
+      3    0.0%    0.1%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      3    0.0%    0.1%  LazyCompile: *dirname node:path:1275:10
+      3    0.0%    0.1%  LazyCompile: *castChunk /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:52:19
+      3    0.0%    0.1%  LazyCompile: *Readable.read node:internal/streams/readable:394:35
+      3    0.0%    0.1%  LazyCompile: *Program /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:113:28
+      3    0.0%    0.1%  LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/source-map/lib/source-node.js:174:29
+      3    0.0%    0.1%  LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      3    0.0%    0.1%  Function: ^session /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:179:26
+      3    0.0%    0.1%  Function: ^emit node:events:474:44
+      3    0.0%    0.1%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:53:70
+      3    0.0%    0.1%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/connect.js:52:28
+      2    0.0%    0.1%  RegExp: ^\.|this\b
+      2    0.0%    0.1%  RegExp: ^(?:\.(?=([=~}\s\/.)|])))
+      2    0.0%    0.1%  RegExp: ^(?:[^\x00]+)
+      2    0.0%    0.1%  RegExp: ^(?:([^\s!"#%-,\.\/;->@\[-\^`\{-~]+(?=([=~}\s\/.)|]))))
+      2    0.0%    0.1%  RegExp: ^((?:(?:[0-9a-fA-F]{1,4}):){7}(?:(?:[0-9a-fA-F]{1,4})|:)|(?:(?:[0-9a-fA-F]{1,4}):){6}(?:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|:(?:[0-9a-fA-F]{1,4})|:)|(?:(?:[0-9a-fA-F]{1,4}):){5}(?::((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,2}|:)|(?:(?:[0-9a-fA-F]{1,4}):){4}(?:(:(?:[0-9a-fA-F]{1,4})){0,1}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,3}|:)|(?:(?:[0-9a-fA-F]{1,4}):){3}(?:(:(?:[0-9a-fA-F]{1,4})){0,2}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,4}|:)|(?:(?:[0-9a-fA-F]{1,4}):){2}(?:(:(?:[0-9a-fA-F]{1,4})){0,3}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,5}|:)|(?:(?:[0-9a-fA-F]{1,4}):){1}(?:(:(?:[0-9a-fA-F]{1,4})){0,4}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(:(?:[0-9a-fA-F]{1,4})){1,6}|:)|(?::((?::(?:[0-9a-fA-F]{1,4})){0,5}:((?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])|(?::(?:[0-9a-fA-F]{1,4})){1,7}|:)))(%[0-9a-zA-Z-.:]{1,})?$
+      2    0.0%    0.1%  RegExp: [&<>"'`=]
+      2    0.0%    0.1%  RegExp: SSS
+      2    0.0%    0.1%  LazyCompile: *write /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:513:15
+      2    0.0%    0.1%  LazyCompile: *toString node:buffer:783:46
+      2    0.0%    0.1%  LazyCompile: *template /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:52:18
+      2    0.0%    0.1%  LazyCompile: *setHeader node:_http_outgoing:574:57
+      2    0.0%    0.1%  LazyCompile: *push /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:868:22
+      2    0.0%    0.1%  LazyCompile: *processWaitQueue /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:418:26
+      2    0.0%    0.1%  LazyCompile: *preparePath /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/helpers.js:63:21
+      2    0.0%    0.1%  LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      2    0.0%    0.1%  LazyCompile: *onwrite node:internal/streams/writable:425:17
+      2    0.0%    0.1%  LazyCompile: *extend /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/utils.js:28:16
+      2    0.0%    0.1%  LazyCompile: *concat node:buffer:536:32
+      2    0.0%    0.1%  LazyCompile: *anonymous /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:549:49
+      2    0.0%    0.1%  LazyCompile: *_write node:internal/streams/writable:283:16
+      2    0.0%    0.1%  LazyCompile: *SubExpression /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:236:40
+      2    0.0%    0.1%  LazyCompile: *SourceNode_add /home/nadir/Desktop/desafiosBackEnd/node_modules/source-map/lib/source-node.js:172:51
+      2    0.0%    0.1%  LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2    0.0%    0.1%  LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:167:47
+      2    0.0%    0.1%  Function: ^writeHead node:_http_server:269:19
+      2    0.0%    0.1%  Function: ^serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      2    0.0%    0.1%  Function: ^reduceToSingleString node:internal/util/inspect:1902:30
+      2    0.0%    0.1%  Function: ^processPromiseRejections node:internal/process/promises:211:34
+      2    0.0%    0.1%  Function: ^popAsyncContext node:internal/async_hooks:554:25
+      2    0.0%    0.1%  Function: ^join node:path:1166:7
+      2    0.0%    0.1%  Function: ^fromString node:buffer:432:20
+      2    0.0%    0.1%  Function: ^formatValue node:internal/util/inspect:745:21
+      2    0.0%    0.1%  Function: ^flow node:internal/streams/readable:1008:14
+      2    0.0%    0.1%  Function: ^finish /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/common.js:118:17
+      2    0.0%    0.1%  Function: ^end node:_http_outgoing:833:45
+      2    0.0%    0.1%  Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      2    0.0%    0.1%  Function: ^append /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:867:11
+      2    0.0%    0.1%  Function: ^Readable.read node:internal/streams/readable:394:35
+      2    0.0%    0.1%  Function: ^EventEmitter.init node:events:326:29
+      2    0.0%    0.1%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:267:27
+      2    0.0%    0.1%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      1    0.0%    0.0%  RegExp: ^\s*?\r?\n
+      1    0.0%    0.0%  RegExp: ^\/?$
+      1    0.0%    0.0%  RegExp: ^[a-zA-Z_][a-zA-Z_0-9]*$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.0%  RegExp: ^(?:\{\{\{\{)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\{)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\s*else\b)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\^\s*(~)?\}\})
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?\*?)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?#\*?)
+      1    0.0%    0.0%  RegExp: ^(?:\{\{(~)?![\s\S]*?\}\})
+      1    0.0%    0.0%  RegExp: ^(?:\.\.)
+      1    0.0%    0.0%  RegExp: ^(?:\))
+      1    0.0%    0.0%  RegExp: ^(?:\()
+      1    0.0%    0.0%  RegExp: ^(?:[\/.])
+      1    0.0%    0.0%  RegExp: ^(?:=)
+      1    0.0%    0.0%  RegExp: ^(?:-?[0-9]+(?:\.[0-9]+)?(?=([~}\s)])))
+      1    0.0%    0.0%  RegExp: ^(?:(~)?\}\})
+      1    0.0%    0.0%  RegExp: \/+
+      1    0.0%    0.0%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.0%  RegExp: [\x00-\x1f\x27\x5c\x7f-\x9f]|[\ud800-\udbff](?![\udc00-\udfff])|(?<![\ud800-\udbff])[\udc00-\udfff]
+      1    0.0%    0.0%  RegExp: ; *
+      1    0.0%    0.0%  LazyCompile: *writeU_Int32LE node:internal/buffer:690:24
+      1    0.0%    0.0%  LazyCompile: *verb /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:30:18
+      1    0.0%    0.0%  LazyCompile: *validateString node:internal/validators:118:24
+      1    0.0%    0.0%  LazyCompile: *toInteger node:buffer:191:19
+      1    0.0%    0.0%  LazyCompile: *slice node:buffer:1116:40
+      1    0.0%    0.0%  LazyCompile: *serializeString /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:20:25
+      1    0.0%    0.0%  LazyCompile: *serializeBinary /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:459:25
+      1    0.0%    0.0%  LazyCompile: *selectServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:279:17
+      1    0.0%    0.0%  LazyCompile: *resolveBSONOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/bson.js:53:28
+      1    0.0%    0.0%  LazyCompile: *realpathSync node:fs:2412:22
+      1    0.0%    0.0%  LazyCompile: *readPackage node:internal/modules/cjs/loader:290:21
+      1    0.0%    0.0%  LazyCompile: *readInt32LE node:internal/buffer:385:21
+      1    0.0%    0.0%  LazyCompile: *processWaitQueue /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:589:26
+      1    0.0%    0.0%  LazyCompile: *processIncomingData /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1    0.0%    0.0%  LazyCompile: *popStack /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:960:30
+      1    0.0%    0.0%  LazyCompile: *now /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:623:13
+      1    0.0%    0.0%  LazyCompile: *matchKnownFields node:_http_incoming:231:26
+      1    0.0%    0.0%  LazyCompile: *header /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:759:29
+      1    0.0%    0.0%  LazyCompile: *hasHooks node:internal/async_hooks:471:18
+      1    0.0%    0.0%  LazyCompile: *getValidatedString /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:641:28
+      1    0.0%    0.0%  LazyCompile: *get node:internal/streams/duplex:94:8
+      1    0.0%    0.0%  LazyCompile: *get isActive /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/transactions.js:98:17
+      1    0.0%    0.0%  LazyCompile: *fromArrayBuffer node:buffer:449:25
+      1    0.0%    0.0%  LazyCompile: *canBeRequiredByUsers node:internal/bootstrap/loaders:240:30
+      1    0.0%    0.0%  LazyCompile: *asString /home/nadir/Desktop/desafiosBackEnd/node_modules/date-format/lib/index.js:29:18
+      1    0.0%    0.0%  LazyCompile: *appendEscaped /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1    0.0%    0.0%  LazyCompile: *accept /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:101:26
+      1    0.0%    0.0%  LazyCompile: *_storeHeader node:_http_outgoing:374:22
+      1    0.0%    0.0%  LazyCompile: *_onceWrap node:events:650:19
+      1    0.0%    0.0%  LazyCompile: *_copy node:buffer:201:15
+      1    0.0%    0.0%  LazyCompile: *__awaiter /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:18:54
+      1    0.0%    0.0%  LazyCompile: *WhitespaceControl.Program /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/whitespace-control.js:19:48
+      1    0.0%    0.0%  LazyCompile: *SourceNode /home/nadir/Desktop/desafiosBackEnd/node_modules/source-map/lib/source-node.js:35:20
+      1    0.0%    0.0%  LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1    0.0%    0.0%  LazyCompile: *Hash node:internal/crypto/hash:58:14
+      1    0.0%    0.0%  LazyCompile: *FastBuffer node:internal/buffer:958:14
+      1    0.0%    0.0%  LazyCompile: *BinMsg /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:545:16
+      1    0.0%    0.0%  LazyCompile: *<anonymous> node:internal/validators:73:3
+      1    0.0%    0.0%  LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:360:47
+      1    0.0%    0.0%  Function: ^writeOrBuffer node:internal/streams/writable:365:23
+      1    0.0%    0.0%  Function: ^writeCommand /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1    0.0%    0.0%  Function: ^write node:buffer:1051:40
+      1    0.0%    0.0%  Function: ^wrapHelper /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/internal/wrapHelper.js:6:20
+      1    0.0%    0.0%  Function: ^unenroll node:timers:78:18
+      1    0.0%    0.0%  Function: ^tryStatSync node:internal/modules/esm/resolve:184:3
+      1    0.0%    0.0%  Function: ^tryRender /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/application.js:638:19
+      1    0.0%    0.0%  Function: ^toString node:buffer:783:46
+      1    0.0%    0.0%  Function: ^toNamespacedPath node:path:1266:19
+      1    0.0%    0.0%  Function: ^template /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:52:18
+      1    0.0%    0.0%  Function: ^stringToFlags node:internal/fs/utils:555:23
+      1    0.0%    0.0%  Function: ^startSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:342:17
+      1    0.0%    0.0%  Function: ^slice node:buffer:594:12
+      1    0.0%    0.0%  Function: ^slice node:buffer:1116:40
+      1    0.0%    0.0%  Function: ^shouldDestroy /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:435:27
+      1    0.0%    0.0%  Function: ^setopts /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/common.js:48:18
+      1    0.0%    0.0%  Function: ^setTimeout node:timers:140:20
+      1    0.0%    0.0%  Function: ^serializeBoolean /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:94:26
+      1    0.0%    0.0%  Function: ^send /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/clustering.js:88:9
+      1    0.0%    0.0%  Function: ^send /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:107:25
+      1    0.0%    0.0%  Function: ^selectServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:279:17
+      1    0.0%    0.0%  Function: ^ret._setup /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:217:25
+      1    0.0%    0.0%  Function: ^ret /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:188:15
+      1    0.0%    0.0%  Function: ^resume_ node:internal/streams/readable:984:17
+      1    0.0%    0.0%  Function: ^resolvePossibleLambda /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:527:56
+      1    0.0%    0.0%  Function: ^resolve node:path:1091:10
+      1    0.0%    0.0%  Function: ^removeListener node:events:693:28
+      1    0.0%    0.0%  Function: ^release /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:616:12
+      1    0.0%    0.0%  Function: ^relative node:path:1190:11
+      1    0.0%    0.0%  Function: ^readdir node:fs:1355:17
+      1    0.0%    0.0%  Function: ^readFileSync node:fs:450:22
+      1    0.0%    0.0%  Function: ^read /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:876:9
+      1    0.0%    0.0%  Function: ^quotedString /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      1    0.0%    0.0%  Function: ^pushContext /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:437:36
+      1    0.0%    0.0%  Function: ^prepareSecretKey node:internal/crypto/keys:555:26
+      1    0.0%    0.0%  Function: ^popState /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:536:40
+      1    0.0%    0.0%  Function: ^parserOnIncoming node:_http_server:852:26
+      1    0.0%    0.0%  Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      1    0.0%    0.0%  Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/minimatch/minimatch.js:271:16
+      1    0.0%    0.0%  Function: ^ondata node:internal/streams/readable:752:18
+      1    0.0%    0.0%  Function: ^onWriteComplete node:internal/stream_base_commons:80:25
+      1    0.0%    0.0%  Function: ^onParserExecuteCommon node:_http_server:691:31
+      1    0.0%    0.0%  Function: ^onParseComplete node:internal/url:532:25
+      1    0.0%    0.0%  Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1    0.0%    0.0%  Function: ^onHeaders /home/nadir/Desktop/desafiosBackEnd/node_modules/on-headers/index.js:56:20
+      1    0.0%    0.0%  Function: ^ok node:assert:409:12
+      1    0.0%    0.0%  Function: ^normalizeString node:path:66:25
+      1    0.0%    0.0%  Function: ^normalizeParseOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/qs/lib/parse.js:203:59
+      1    0.0%    0.0%  Function: ^noop node:internal/util/debuglog:47:14
+      1    0.0%    0.0%  Function: ^needFinish node:internal/streams/writable:650:20
+      1    0.0%    0.0%  Function: ^msFromTimeSpec node:internal/fs/utils:446:24
+      1    0.0%    0.0%  Function: ^mergeSource /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:267:36
+      1    0.0%    0.0%  Function: ^matchKnownFields node:_http_incoming:231:26
+      1    0.0%    0.0%  Function: ^makeOperationHandler /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/server.js:323:30
+      1    0.0%    0.0%  Function: ^lookupProperty /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:118:44
+      1    0.0%    0.0%  Function: ^lookupOnContext /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:448:44
+      1    0.0%    0.0%  Function: ^log /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/logger.js:82:6
+      1    0.0%    0.0%  Function: ^isRegExp /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/utils.js:68:18
+      1    0.0%    0.0%  Function: ^isFileType node:fs:205:20
+      1    0.0%    0.0%  Function: ^isCryptoKey node:internal/crypto/keys:711:21
+      1    0.0%    0.0%  Function: ^initData /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/runtime.js:342:18
+      1    0.0%    0.0%  Function: ^helperExpression /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/ast.js:10:48
+      1    0.0%    0.0%  Function: ^glob /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/glob.js:62:15
+      1    0.0%    0.0%  Function: ^getStatsFromBinding node:internal/fs/utils:530:29
+      1    0.0%    0.0%  Function: ^getDefaultHighWaterMark node:internal/streams/state:15:33
+      1    0.0%    0.0%  Function: ^getColorDepth node:internal/tty:106:23
+      1    0.0%    0.0%  Function: ^get writeConcern /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/collection.js:126:21
+      1    0.0%    0.0%  Function: ^get readPreference /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/collection.js:113:23
+      1    0.0%    0.0%  Function: ^get loadBalanced /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:164:21
+      1    0.0%    0.0%  Function: ^get description /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:74:20
+      1    0.0%    0.0%  Function: ^generateList /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:143:38
+      1    0.0%    0.0%  Function: ^fulfilled /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:21:27
+      1    0.0%    0.0%  Function: ^fromString /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:369:22
+      1    0.0%    0.0%  Function: ^fromOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/write_concern.js:40:23
+      1    0.0%    0.0%  Function: ^fromOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/read_concern.js:36:23
+      1    0.0%    0.0%  Function: ^formatWithOptionsInternal node:internal/util/inspect:2048:35
+      1    0.0%    0.0%  Function: ^formatWithOptions node:internal/util/inspect:2024:27
+      1    0.0%    0.0%  Function: ^format /home/nadir/Desktop/desafiosBackEnd/node_modules/content-type/index.js:65:17
+      1    0.0%    0.0%  Function: ^fn node:internal/util:345:14
+      1    0.0%    0.0%  Function: ^f /home/nadir/Desktop/desafiosBackEnd/node_modules/once/once.js:22:20
+      1    0.0%    0.0%  Function: ^endSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:128:15
+      1    0.0%    0.0%  Function: ^emitReadable node:internal/streams/readable:563:22
+      1    0.0%    0.0%  Function: ^emitCloseNT node:internal/streams/destroy:126:21
+      1    0.0%    0.0%  Function: ^dirname node:path:1275:10
+      1    0.0%    0.0%  Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      1    0.0%    0.0%  Function: ^debug /home/nadir/Desktop/desafiosBackEnd/node_modules/streamroller/node_modules/debug/src/common.js:66:17
+      1    0.0%    0.0%  Function: ^debug /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/node_modules/debug/src/common.js:66:17
+      1    0.0%    0.0%  Function: ^contextName /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:990:36
+      1    0.0%    0.0%  Function: ^construct node:internal/streams/destroy:225:19
+      1    0.0%    0.0%  Function: ^completeEndSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:137:40
+      1    0.0%    0.0%  Function: ^compile /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:490:17
+      1    0.0%    0.0%  Function: ^compareTimersLists node:internal/timers:400:28
+      1    0.0%    0.0%  Function: ^braceExpand /home/nadir/Desktop/desafiosBackEnd/node_modules/minimatch/minimatch.js:233:22
+      1    0.0%    0.0%  Function: ^basicLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:63:21
+      1    0.0%    0.0%  Function: ^assertEncoding node:internal/fs/utils:151:24
+      1    0.0%    0.0%  Function: ^applySession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:652:22
+      1    0.0%    0.0%  Function: ^ambiguousSexpr /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:248:42
+      1    0.0%    0.0%  Function: ^alignPool node:buffer:159:19
+      1    0.0%    0.0%  Function: ^afterWrite node:internal/streams/writable:487:20
+      1    0.0%    0.0%  Function: ^advanceOperationTime /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:172:25
+      1    0.0%    0.0%  Function: ^addChunk node:internal/streams/readable:304:18
+      1    0.0%    0.0%  Function: ^acquire /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:599:12
+      1    0.0%    0.0%  Function: ^_shouldRoll /home/nadir/Desktop/desafiosBackEnd/node_modules/streamroller/lib/RollingFileWriteStream.js:155:20
+      1    0.0%    0.0%  Function: ^_send node:_http_outgoing:319:49
+      1    0.0%    0.0%  Function: ^_flushOutput node:_http_outgoing:951:63
+      1    0.0%    0.0%  Function: ^_copy node:buffer:201:15
+      1    0.0%    0.0%  Function: ^_addListener node:events:554:22
+      1    0.0%    0.0%  Function: ^_addHeaderLine node:_http_incoming:337:24
+      1    0.0%    0.0%  Function: ^__generator /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:27:58
+      1    0.0%    0.0%  Function: ^Writable.write node:internal/streams/writable:333:36
+      1    0.0%    0.0%  Function: ^UpdateOperation /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/update.js:10:16
+      1    0.0%    0.0%  Function: ^URL node:internal/url:620:14
+      1    0.0%    0.0%  Function: ^TimersList node:internal/timers:241:20
+      1    0.0%    0.0%  Function: ^ServerResponse node:_http_server:178:24
+      1    0.0%    0.0%  Function: ^ReadableState node:internal/streams/readable:78:23
+      1    0.0%    0.0%  Function: ^Readable.on node:internal/streams/readable:874:33
+      1    0.0%    0.0%  Function: ^Program /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:113:28
+      1    0.0%    0.0%  Function: ^Msg /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:468:16
+      1    0.0%    0.0%  Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    0.0%    0.0%  Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1    0.0%    0.0%  Function: ^Long.isZero /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:504:38
+      1    0.0%    0.0%  Function: ^Long.compare /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:291:39
+      1    0.0%    0.0%  Function: ^Long.add /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:252:35
+      1    0.0%    0.0%  Function: ^IncomingMessage node:_http_incoming:51:25
+      1    0.0%    0.0%  Function: ^Hmac node:internal/crypto/hash:127:14
+      1    0.0%    0.0%  Function: ^Hash node:internal/crypto/hash:58:14
+      1    0.0%    0.0%  Function: ^CommandOperation /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/command.js:14:16
+      1    0.0%    0.0%  Function: ^Binary /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/binary.js:18:20
+      1    0.0%    0.0%  Function: ^BinMsg /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:545:16
+      1    0.0%    0.0%  Function: ^<anonymous> node:internal/validators:84:3
+      1    0.0%    0.0%  Function: ^<anonymous> node:internal/util:347:32
+      1    0.0%    0.0%  Function: ^<anonymous> node:internal/tls/secure-context:98:9
+      1    0.0%    0.0%  Function: ^<anonymous> node:internal/fs/utils:357:35
+      1    0.0%    0.0%  Function: ^<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/routes/routerInfo/routerInfo.js:10:21
+      1    0.0%    0.0%  Function: ^<anonymous> :1:20
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:132:52
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:173:73
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:138:61
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cursor/find_cursor.js:54:72
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:485:38
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:95:57
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:30:40
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:251:47
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:225:57
+      1    0.0%    0.0%  Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:107:67
+      1    0.0%    0.0%  Function: *wasm-function[15]
+
+ [C++]:
+   ticks  total  nonlib   name
+   1231   16.0%   52.6%  epoll_pwait
+    129    1.7%    5.5%  __GI___libc_write
+     56    0.7%    2.4%  fwrite
+     47    0.6%    2.0%  __memcpy_avx_unaligned_erms
+     23    0.3%    1.0%  __GI___writev
+     22    0.3%    0.9%  _int_malloc
+     20    0.3%    0.9%  __GI___lll_lock_wait
+     20    0.3%    0.9%  __GI___libc_malloc
+     17    0.2%    0.7%  __GI__IO_file_xsputn
+     16    0.2%    0.7%  __futex_abstimed_wait_common
+     16    0.2%    0.7%  __GI___libc_read
+     15    0.2%    0.6%  cfree@GLIBC_2.2.5
+     14    0.2%    0.6%  __GI___mprotect
+     12    0.2%    0.5%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      9    0.1%    0.4%  _int_free
+      9    0.1%    0.4%  __memcmp_avx2_movbe
+      8    0.1%    0.3%  syscall
+      7    0.1%    0.3%  __strlen_avx2
+      6    0.1%    0.3%  std::ostream::sentry::sentry(std::ostream&)
+      6    0.1%    0.3%  __GI___pthread_mutex_unlock_usercnt
+      6    0.1%    0.3%  __GI___pthread_mutex_lock
+      6    0.1%    0.3%  __GI___pthread_cond_signal
+      6    0.1%    0.3%  __GI___lll_lock_wake
+      5    0.1%    0.2%  unlink_chunk.constprop.0
+      5    0.1%    0.2%  malloc_consolidate
+      5    0.1%    0.2%  __vfprintf_internal
+      5    0.1%    0.2%  __memset_avx2_unaligned_erms
+      4    0.1%    0.2%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+      4    0.1%    0.2%  int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool)
+      4    0.1%    0.2%  __memchr_avx2
+      3    0.0%    0.1%  __errno_location
+      3    0.0%    0.1%  __calloc
+      3    0.0%    0.1%  __GI___pthread_rwlock_wrlock
+      3    0.0%    0.1%  __GI___pthread_enable_asynccancel
+      3    0.0%    0.1%  _IO_str_init_static_internal
+      2    0.0%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.0%    0.1%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.0%    0.1%  __mempcpy_avx_unaligned_erms
+      2    0.0%    0.1%  __GI___pthread_rwlock_unlock
+      2    0.0%    0.1%  __GI___munmap
+      2    0.0%    0.1%  __GI___lll_lock_wait_private
+      2    0.0%    0.1%  __GI___libc_open
+      2    0.0%    0.1%  _IO_old_init
+      1    0.0%    0.0%  std::ostream& std::ostream::_M_insert<long>(long)
+      1    0.0%    0.0%  std::locale::id::_M_id() const
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      1    0.0%    0.0%  std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+      1    0.0%    0.0%  operator new(unsigned long)
+      1    0.0%    0.0%  operator delete(void*)
+      1    0.0%    0.0%  freeaddrinfo
+      1    0.0%    0.0%  epoll_ctl
+      1    0.0%    0.0%  _mid_memalign.constprop.0
+      1    0.0%    0.0%  __clock_gettime
+      1    0.0%    0.0%  __brk
+      1    0.0%    0.0%  ___vsnprintf
+      1    0.0%    0.0%  __GI_sigemptyset
+      1    0.0%    0.0%  __GI___shutdown
+      1    0.0%    0.0%  __GI___pthread_once
+      1    0.0%    0.0%  __GI___pthread_getspecific
+      1    0.0%    0.0%  __GI___printf_fp_l
+      1    0.0%    0.0%  __GI___madvise
+      1    0.0%    0.0%  __GI__IO_setb
+      1    0.0%    0.0%  __GI__IO_default_xsputn
+      1    0.0%    0.0%  _IO_no_init
+
+ [Summary]:
+   ticks  total  nonlib   name
+    551    7.2%   23.5%  JavaScript
+   1785   23.3%   76.3%  C++
+    300    3.9%   12.8%  GC
+   5335   69.5%          Shared libraries
+      4    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    114   28.5%    1.5%  __GI___libc_write
+     53   13.3%    0.7%  fwrite
+     31    7.8%    0.4%  __memcpy_avx_unaligned_erms
+     23    5.8%    0.3%  __GI___writev
+     19    4.8%    0.2%  _int_malloc
+     16    4.0%    0.2%  __GI___libc_malloc
+     15    3.8%    0.2%  __GI__IO_file_xsputn
+     12    3.0%    0.2%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+      9    2.3%    0.1%  __memcmp_avx2_movbe
+      8    2.0%    0.1%  syscall
+      8    2.0%    0.1%  cfree@GLIBC_2.2.5
+      6    1.5%    0.1%  std::ostream::sentry::sentry(std::ostream&)
+      6    1.5%    0.1%  __strlen_avx2
+      5    1.3%    0.1%  __vfprintf_internal
+      5    1.3%    0.1%  __memset_avx2_unaligned_erms
+      5    1.3%    0.1%  __GI___mprotect
+      4    1.0%    0.1%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+      4    1.0%    0.1%  int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool)
+      4    1.0%    0.1%  _int_free
+      4    1.0%    0.1%  __memchr_avx2
+      4    1.0%    0.1%  __GI___pthread_mutex_unlock_usercnt
+      3    0.8%    0.0%  __calloc
+      3    0.8%    0.0%  __GI___pthread_mutex_lock
+      3    0.8%    0.0%  _IO_str_init_static_internal
+      2    0.5%    0.0%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      2    0.5%    0.0%  malloc_consolidate
+      2    0.5%    0.0%  __GI___pthread_rwlock_wrlock
+      2    0.5%    0.0%  __GI___pthread_rwlock_unlock
+      2    0.5%    0.0%  __GI___pthread_enable_asynccancel
+      2    0.5%    0.0%  __GI___pthread_cond_signal
+      2    0.5%    0.0%  __GI___lll_lock_wake
+      2    0.5%    0.0%  __GI___libc_open
+      2    0.5%    0.0%  _IO_old_init
+      1    0.3%    0.0%  unlink_chunk.constprop.0
+      1    0.3%    0.0%  std::ostream& std::ostream::_M_insert<long>(long)
+      1    0.3%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      1    0.3%    0.0%  std::locale::id::_M_id() const
+      1    0.3%    0.0%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      1    0.3%    0.0%  std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+      1    0.3%    0.0%  operator new(unsigned long)
+      1    0.3%    0.0%  operator delete(void*)
+      1    0.3%    0.0%  _mid_memalign.constprop.0
+      1    0.3%    0.0%  __mempcpy_avx_unaligned_erms
+      1    0.3%    0.0%  __errno_location
+      1    0.3%    0.0%  __clock_gettime
+      1    0.3%    0.0%  __brk
+      1    0.3%    0.0%  ___vsnprintf
+      1    0.3%    0.0%  __GI___pthread_once
+      1    0.3%    0.0%  __GI___madvise
+      1    0.3%    0.0%  __GI__IO_default_xsputn
+      1    0.3%    0.0%  _IO_no_init
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   5332   69.5%  /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+   2703   50.7%    /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+    402   14.9%      Function: ^compileFunction node:vm:308:25
+    399   99.3%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    398   99.7%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+    389   97.7%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      9    2.3%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1112:37
+    133    4.9%      /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+     12    9.0%        Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/cors/lib/index.js:204:37
+     12  100.0%          Function: ^optionsCallback /home/nadir/Desktop/desafiosBackEnd/node_modules/cors/lib/index.js:198:34
+     12  100.0%            Function: ^corsMiddleware /home/nadir/Desktop/desafiosBackEnd/node_modules/cors/lib/index.js:203:35
+      8    6.0%        Function: ^command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:247:12
+      7   87.5%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/server.js:193:42
+      6   85.7%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:265:23
+      1   14.3%            LazyCompile: *processWaitQueue /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:418:26
+      1   12.5%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:25:32
+      7    5.3%        Function: ^asString /home/nadir/Desktop/desafiosBackEnd/node_modules/date-format/lib/index.js:29:18
+      7  100.0%          Function: ^timestampLevelAndCategory /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:42:35
+      5   71.4%            Function: ^colouredLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:71:24
+      2   28.6%            Function: ^basicLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:63:21
+      6    4.5%        Function: ^mergeSource /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:267:36
+      6  100.0%          LazyCompile: *compile /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      5   83.3%            LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+      1   16.7%            Function: ^compileInput /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      6    4.5%        Function: ^fromString /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:369:22
+      6  100.0%          Function: ^ns /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:347:12
+      5   83.3%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cursor/abstract_cursor.js:437:42
+      1   16.7%            LazyCompile: ~measureRoundTripTime /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:280:30
+      5    3.8%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      4   80.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3   75.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   25.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1   20.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      5    3.8%        Function: ^databaseNamespace /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:429:27
+      5  100.0%          Function: ^Msg /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:468:16
+      5  100.0%            Function: ^command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:247:12
+      4    3.0%        LazyCompile: *quotedString /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      3   75.0%          Function: ^pushSource /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:881:34
+      3  100.0%            Function: ^append /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:394:26
+      1   25.0%          Function: ^quotedString /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:998:38
+      1  100.0%            Function: ^setupParams /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:1034:36
+      3    2.3%        LazyCompile: *setHeader node:_http_outgoing:574:57
+      2   66.7%          Function: ^setcookie /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:655:19
+      2  100.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:220:28
+      1   33.3%          Function: ^header /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:759:29
+      1  100.0%            Function: ^send /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:107:25
+      3    2.3%        LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      3    2.3%        LazyCompile: *asString /home/nadir/Desktop/desafiosBackEnd/node_modules/date-format/lib/index.js:29:18
+      3  100.0%          Function: ^timestampLevelAndCategory /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:42:35
+      2   66.7%            Function: ^basicLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:63:21
+      1   33.3%            Function: ^colouredLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:71:24
+      3    2.3%        Function: ^quotedString /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/code-gen.js:118:38
+      3  100.0%          Function: ^pushSource /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:881:34
+      2   66.7%            Function: ^appendEscaped /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:416:40
+      1   33.3%            Function: ^append /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:394:26
+      3    2.3%        Function: ^expressInit /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/middleware/init.js:29:30
+      2   66.7%          Function: ^handle /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            Function: ^trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+      1   33.3%          LazyCompile: *trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+      1  100.0%            LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:176:16
+      3    2.3%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      3  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      3    2.3%        Function: ^FastBuffer node:internal/buffer:958:14
+      2   66.7%          Function: ^alloc node:buffer:360:30
+      2  100.0%            Function: ^serialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:111:19
+      1   33.3%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^allocUnsafeSlow node:buffer:383:50
+      2    1.5%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      2  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      2  100.0%            LazyCompile: ~parseSslOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:222:25
+      2    1.5%        Function: ^parsePayload /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:173:22
+      1   50.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:152:83
+      1  100.0%            Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1   50.0%          Function: ^continueScramConversation /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      2    1.5%        Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      2  100.0%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:63:44
+      1   50.0%            LazyCompile: *processIncomingData /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1   50.0%            LazyCompile: *emit node:events:474:44
+      2    1.5%        Function: ^normalize node:path:1127:12
+      2  100.0%          Function: ^join node:path:1166:7
+      1   50.0%            Function: ^makeAbs /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/common.js:199:18
+      1   50.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:251:47
+      2    1.5%        Function: ^clone /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:550:17
+      2  100.0%          Function: ^completeEndSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:137:40
+      2  100.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:132:52
+      2    1.5%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      2  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+      2  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+    115    4.3%      Function: ^memoryUsage node:internal/process/per_thread:168:23
+    115  100.0%        Function: ^<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/routes/routerInfo/routerInfo.js:10:21
+    115  100.0%          Function: ^handle /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/layer.js:86:49
+    115  100.0%            Function: ^next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/route.js:114:16
+     77    2.8%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+     77  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+     77  100.0%          Function: ^Socket._writeGeneric node:net:769:42
+     77  100.0%            Function: ^Socket._write node:net:806:35
+     62    2.3%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     57   91.9%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      5    8.8%          Function: ~<anonymous> node:internal/webstreams/transformstream:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    8.8%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    8.8%          Function: ~<anonymous> node:crypto:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4    7.0%          Function: ~<anonymous> node:http:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    5.3%          Function: ~<anonymous> node:tls:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:stream/web:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:internal/webstreams/readablestream:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:internal/child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:child_process:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:_http_client:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.5%          Function: ~<anonymous> node:_http_agent:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1    1.8%          LazyCompile: ~lazyLoadStreams node:fs:2845:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:2988:17
+      1    1.8%          LazyCompile: ~initCJSParse node:internal/modules/esm/translators:58:28
+      1  100.0%            LazyCompile: ~commonjsStrategy node:internal/modules/esm/translators:146:60
+      1    1.8%          LazyCompile: ~get node:dns:334:8
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.8%          Function: ~<anonymous> node:worker_threads:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:net:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/worker:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/tls/secure-context:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:internal/crypto/cipher:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:https:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:dns:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:assert:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.8%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    4.8%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      3  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2   66.7%            Function: ^builtinStrategy node:internal/modules/esm/translators:252:58
+      1   33.3%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    3.2%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            LazyCompile: ~builtinStrategy node:internal/modules/esm/translators:252:58
+     46    1.7%      Function: ^authenticate /home/nadir/Desktop/desafiosBackEnd/node_modules/passport/lib/middleware/authenticate.js:94:31
+     25   54.3%        LazyCompile: *trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+     25  100.0%          LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:176:16
+     25  100.0%            Function: ^initialize /home/nadir/Desktop/desafiosBackEnd/node_modules/passport/lib/middleware/initialize.js:51:29
+     21   45.7%        Function: ^handle /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/layer.js:86:49
+     21  100.0%          Function: ^trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+     17   81.0%            LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:176:16
+      4   19.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:275:64
+     45    1.7%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+     45  100.0%        Function: ^Socket._writeGeneric node:net:769:42
+     45  100.0%          Function: ^Socket._writev node:net:801:36
+     45  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+     38    1.4%      Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+     30   78.9%        Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+     30  100.0%          Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:162:21
+     28   93.3%            Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      1    3.3%            LazyCompile: ~parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:384:10
+      1    3.3%            Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:384:10
+      7   18.4%        Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      5   71.4%          Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      5  100.0%            Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:162:21
+      2   28.6%          Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      1   50.0%            LazyCompile: ~deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      1   50.0%            Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      1    2.6%        LazyCompile: ~deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%          LazyCompile: ~deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:162:21
+      1  100.0%            LazyCompile: ~parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+     32    1.2%      LazyCompile: *compile /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+     24   75.0%        LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+     24  100.0%          LazyCompile: *step /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+     11   45.8%            LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:30:40
+     10   41.7%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:30:40
+      3   12.5%            LazyCompile: *fulfilled /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:21:27
+      8   25.0%        Function: ^compileInput /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      8  100.0%          Function: ^ret /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:515:15
+      8  100.0%            Function: ^ExpressHandlebars._renderTemplate /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:321:60
+     31    1.1%      LazyCompile: *next /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:478:32
+     31  100.0%        LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/parser.js:269:30
+     17   54.8%          Function: ^parseWithoutProcessing /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:33:32
+     17  100.0%            Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+     14   45.2%          LazyCompile: *<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:227:47
+     14  100.0%            LazyCompile: *step /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:31:18
+     30    1.1%      LazyCompile: *deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+     15   50.0%        LazyCompile: *deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      9   60.0%          LazyCompile: *deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      5   55.6%            LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      3   33.3%            Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      1   11.1%            LazyCompile: *deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      3   20.0%          LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      3  100.0%            Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      3   20.0%          Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      3  100.0%            Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:162:21
+      9   30.0%        Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      9  100.0%          Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/bson.js:162:21
+      9  100.0%            Function: ^parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      6   20.0%        LazyCompile: *parse /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/commands.js:577:10
+      6  100.0%          Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      6  100.0%            Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:63:44
+     28    1.0%      Function: ^getColorDepth node:internal/tty:106:23
+     28  100.0%        Function: ^value node:internal/console/constructor:300:20
+     28  100.0%          Function: ^value node:internal/console/constructor:321:20
+     28  100.0%            Function: ^log node:internal/console/constructor:359:6
+
+   1231   16.0%  epoll_pwait
+
+    129    1.7%  __GI___libc_write
+     90   69.8%    /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      4    4.4%      /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1   25.0%        LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:391:28
+      1  100.0%          LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:966:23
+      1  100.0%            LazyCompile: ~defaultResolve node:internal/modules/esm/resolve:1039:24
+      1   25.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/debug/src/node.js:34:64
+      1  100.0%          /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1  100.0%            Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/debug/src/node.js:1:1
+      1   25.0%        Function: ^resolveAuthMechanism /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:76:25
+      1  100.0%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%            Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1   25.0%        Function: ^isRegExp /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/utils.js:68:18
+      1  100.0%          LazyCompile: *serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      1  100.0%            LazyCompile: *serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      2    2.2%      LazyCompile: ~processIncomingData /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      2  100.0%        LazyCompile: ~_write /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      2  100.0%          LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+      2  100.0%            LazyCompile: ~_write node:internal/streams/writable:283:16
+      2    2.2%      LazyCompile: ~command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:247:12
+      2  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:78:43
+      2  100.0%          LazyCompile: ~prepareHandshakeDocument /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:139:34
+      2  100.0%            LazyCompile: ~performInitialHandshake /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    1.1%      LazyCompile: ~writeCommand /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1  100.0%        LazyCompile: ~write /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:513:15
+      1  100.0%          LazyCompile: ~command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:247:12
+      1  100.0%            LazyCompile: ~checkServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:139:21
+      1    1.1%      LazyCompile: ~uvErrmapGet node:internal/errors:449:21
+      1  100.0%        LazyCompile: ~hasNoEntryError node:fs:1467:25
+      1  100.0%          Function: ^statSync node:fs:1530:18
+      1  100.0%            LazyCompile: ~fileExists node:internal/modules/esm/resolve:283:20
+      1    1.1%      LazyCompile: ~update node:internal/crypto/hash:95:40
+      1  100.0%        LazyCompile: ~passwordDigest /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:182:24
+      1  100.0%          LazyCompile: ~continueScramConversation /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1    1.1%      LazyCompile: ~transform /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:967:18
+      1  100.0%        LazyCompile: ~setOption /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:396:19
+      1  100.0%          LazyCompile: ~parseOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:208:22
+      1  100.0%            LazyCompile: ~MongoClient /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/mongo_client.js:60:16
+      1    1.1%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    1.1%      LazyCompile: ~setup /home/nadir/Desktop/desafiosBackEnd/node_modules/socket.io-parser/node_modules/debug/src/common.js:7:15
+      1  100.0%        Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/socket.io-parser/node_modules/debug/src/node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%        LazyCompile: ~write /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:513:15
+      1  100.0%          LazyCompile: ~command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:247:12
+      1  100.0%            LazyCompile: ~checkServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:139:21
+      1    1.1%      LazyCompile: ~serverUpdateHandler /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:372:24
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:535:53
+      1  100.0%          Function: ^emit node:events:474:44
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/server.js:62:55
+      1    1.1%      LazyCompile: ~serializeLong /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:300:23
+      1  100.0%        LazyCompile: ~serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      1  100.0%          Function: ^serializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:258:25
+      1  100.0%            LazyCompile: ~serializeInto /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/serializer.js:550:23
+      1    1.1%      LazyCompile: ~selectServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:279:17
+      1  100.0%        LazyCompile: ~connect /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:171:12
+      1  100.0%          LazyCompile: ~createTopology /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/connect.js:32:67
+      1    1.1%      LazyCompile: ~resolveOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:739:24
+      1  100.0%        LazyCompile: ~createIndex /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/collection.js:254:16
+      1  100.0%          LazyCompile: ~setAutoRemove /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/build/main/lib/MongoStore.js:138:18
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1    1.1%      LazyCompile: ~resolveBSONOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/bson.js:53:28
+      1  100.0%        LazyCompile: ~Db /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/db.js:81:16
+      1  100.0%          LazyCompile: ~db /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/mongo_client.js:165:7
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1    1.1%      LazyCompile: ~resolve node:path:1091:10
+      1  100.0%        LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:81:28
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.1%      LazyCompile: ~res.get /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:793:19
+      1  100.0%        LazyCompile: ~send /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:107:25
+      1  100.0%          LazyCompile: ~done /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:1011:27
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:251:47
+      1    1.1%      LazyCompile: ~removeAllListeners node:events:753:32
+      1  100.0%        Function: ^Readable.removeAllListeners node:internal/streams/readable:922:49
+      1  100.0%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:299:37
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~remove node:internal/linkedlist:16:16
+      1  100.0%        LazyCompile: ~append node:internal/linkedlist:30:16
+      1  100.0%          LazyCompile: ~insert node:internal/timers:350:16
+      1  100.0%            LazyCompile: ~setUnrefTimeout node:internal/timers:372:25
+      1    1.1%      LazyCompile: ~readFileAfterRead node:internal/fs/read_file_context:25:27
+      1    1.1%      LazyCompile: ~randomBytes node:internal/crypto/random:91:21
+      1  100.0%        LazyCompile: ~prepare /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:16:12
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:139:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    1.1%      LazyCompile: ~push node:internal/fixed_queue:99:7
+      1  100.0%        LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%          LazyCompile: ~construct node:internal/streams/destroy:225:19
+      1  100.0%            LazyCompile: ~Writable node:internal/streams/writable:219:18
+      1    1.1%      LazyCompile: ~processTimers node:internal/timers:487:25
+      1    1.1%      LazyCompile: ~prefinish node:internal/streams/writable:719:19
+      1  100.0%        Function: ^finishMaybe node:internal/streams/writable:731:21
+      1  100.0%          LazyCompile: ~Writable.end node:internal/streams/writable:594:34
+      1  100.0%            LazyCompile: ~Socket.end node:net:608:32
+      1    1.1%      LazyCompile: ~preamble /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:208:30
+      1  100.0%        Function: ^compile /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/javascript-compiler.js:73:28
+      1  100.0%          LazyCompile: ~compileInput /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      1  100.0%            LazyCompile: ~ret /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:515:15
+      1    1.1%      LazyCompile: ~popAsyncContext node:internal/async_hooks:554:25
+      1  100.0%        LazyCompile: ~emitAfterScript node:internal/async_hooks:518:25
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~percolateUp node:internal/priority_queue:73:14
+      1  100.0%        LazyCompile: ~insert node:internal/priority_queue:34:9
+      1  100.0%          LazyCompile: ~insert node:internal/timers:350:16
+      1  100.0%            LazyCompile: ~setTimeout node:timers:140:20
+      1    1.1%      LazyCompile: ~parseQuery /home/nadir/Desktop/desafiosBackEnd/node_modules/whatwg-url/lib/url-state-machine.js:1063:63
+      1  100.0%        Function: ^URLStateMachine /home/nadir/Desktop/desafiosBackEnd/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /home/nadir/Desktop/desafiosBackEnd/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%            LazyCompile: ~URLImpl /home/nadir/Desktop/desafiosBackEnd/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    1.1%      LazyCompile: ~parseConnectOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:196:29
+      1  100.0%        Function: ^parseSslOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:222:25
+      1  100.0%          LazyCompile: ~makeConnection /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:241:24
+      1  100.0%            LazyCompile: ~connect /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    1.1%      LazyCompile: ~parse file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs-parser/build/lib/yargs-parser.js:14:10
+      1  100.0%        LazyCompile: ~yargsParser.detailed file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs-parser/build/lib/index.js:54:33
+      1  100.0%          LazyCompile: ~<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs/build/lib/yargs-factory.js:1317:40
+      1  100.0%            LazyCompile: ~parse file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs/build/lib/yargs-factory.js:683:10
+      1    1.1%      LazyCompile: ~parse /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/base.js:51:15
+      1  100.0%        LazyCompile: ~compileInput /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:507:24
+      1  100.0%          LazyCompile: ~ret /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/compiler/compiler.js:515:15
+      1  100.0%            LazyCompile: ~ExpressHandlebars._renderTemplate /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:321:60
+      1    1.1%      LazyCompile: ~parse /home/nadir/Desktop/desafiosBackEnd/node_modules/content-type/index.js:106:16
+      1  100.0%        Function: ^setCharset /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/utils.js:246:41
+      1  100.0%          LazyCompile: ~send /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:107:25
+      1  100.0%            LazyCompile: ~done /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:1011:27
+      1    1.1%      LazyCompile: ~onParseComplete node:internal/url:532:25
+      1  100.0%        /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1  100.0%          LazyCompile: ~URL node:internal/url:620:14
+      1  100.0%            LazyCompile: ~pathToFileURL node:internal/url:1455:23
+      1    1.1%      LazyCompile: ~next /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:176:16
+      1  100.0%        LazyCompile: ~query /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/middleware/query.js:39:24
+      1  100.0%          LazyCompile: ~handle /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+      1    1.1%      LazyCompile: ~msFromTimeSpec node:internal/fs/utils:446:24
+      1  100.0%        LazyCompile: ~getStatsFromBinding node:internal/fs/utils:530:29
+      1  100.0%          LazyCompile: ~statSync node:fs:1530:18
+      1  100.0%            LazyCompile: ~fileExists node:internal/modules/esm/resolve:283:20
+      1    1.1%      LazyCompile: ~makeInterruptibleAsyncInterval /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:646:40
+      1  100.0%        LazyCompile: ~connect /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:80:12
+      1  100.0%          LazyCompile: ~connect /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/server.js:96:12
+      1  100.0%            LazyCompile: ~createAndConnectServer /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:529:32
+      1    1.1%      LazyCompile: ~isRecord /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:789:18
+      1  100.0%        LazyCompile: ~transform /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:447:18
+      1  100.0%          LazyCompile: ~setOption /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:396:19
+      1  100.0%            LazyCompile: ~parseOptions /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:208:22
+      1    1.1%      LazyCompile: ~innerOk node:assert:377:17
+      1  100.0%        Function: ^ok node:assert:409:12
+      1  100.0%          Function: ^Glob._process /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/glob.js:295:36
+      1  100.0%            Function: ^Glob /home/nadir/Desktop/desafiosBackEnd/node_modules/glob/glob.js:117:15
+      1    1.1%      LazyCompile: ~hasNoEntryError node:fs:1467:25
+      1  100.0%        Function: ^statSync node:fs:1530:18
+      1  100.0%          Function: ^fileExists node:internal/modules/esm/resolve:283:20
+      1  100.0%            LazyCompile: ~legacyMainResolve node:internal/modules/esm/resolve:299:27
+      1    1.1%      LazyCompile: ~handle /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%        LazyCompile: ~trim_prefix /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:288:23
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:275:64
+      1  100.0%            LazyCompile: ~process_params /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/router/index.js:333:47
+      1    1.1%      LazyCompile: ~getOptionValue node:internal/options:39:24
+      1  100.0%        LazyCompile: ~addReadOnlyProcessAlias node:internal/bootstrap/pre_execution:122:33
+      1  100.0%          LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:81:28
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1    1.1%      LazyCompile: ~getDefaultAuthMechanism /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:9:33
+      1  100.0%        Function: ^resolveAuthMechanism /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:76:25
+      1  100.0%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%            Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1    1.1%      LazyCompile: ~fromStringFast node:buffer:413:24
+      1  100.0%        LazyCompile: ~fromString node:buffer:432:20
+      1  100.0%          LazyCompile: ~from node:buffer:296:28
+      1  100.0%            Function: ~<anonymous> node:_http_server:1:1
+      1    1.1%      LazyCompile: ~formatWithOptionsInternal node:internal/util/inspect:2048:35
+      1  100.0%        LazyCompile: ~format node:internal/util/inspect:2020:16
+      1  100.0%          LazyCompile: ~timestampLevelAndCategory /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:42:35
+      1  100.0%            LazyCompile: ~basicLayout /home/nadir/Desktop/desafiosBackEnd/node_modules/log4js/lib/layouts.js:63:21
+      1    1.1%      LazyCompile: ~findOne /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/collection.js:218:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/connect-mongo/build/main/lib/MongoStore.js:203:10
+      1  100.0%          /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~executeWithServerSelection /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:69:36
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1  100.0%          LazyCompile: ~maybePromise /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:397:22
+      1  100.0%            LazyCompile: ~executeOperation /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:11:26
+      1    1.1%      LazyCompile: ~executeScram /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:74:22
+      1  100.0%        LazyCompile: ~auth /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/auth/scram.js:39:9
+      1  100.0%          Function: ^<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%            Function: ^onMessage /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:152:14
+      1    1.1%      LazyCompile: ~etag /home/nadir/Desktop/desafiosBackEnd/node_modules/etag/index.js:70:15
+      1  100.0%        LazyCompile: ~generateETag /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/utils.js:271:32
+      1  100.0%          LazyCompile: ~send /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:107:25
+      1  100.0%            LazyCompile: ~done /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/response.js:1011:27
+      1    1.1%      LazyCompile: ~createSecureContext node:_tls_common:99:29
+      1  100.0%        LazyCompile: ~connect node:_tls_wrap:1597:35
+      1  100.0%          LazyCompile: ~makeConnection /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:241:24
+      1  100.0%            LazyCompile: ~connect /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1    1.1%      LazyCompile: ~completeEndSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:137:40
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:132:52
+      1  100.0%          LazyCompile: ~maybePromise /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:397:22
+      1  100.0%            LazyCompile: ~endSession /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sessions.js:128:15
+      1    1.1%      LazyCompile: ~allocUnsafeSlow node:buffer:383:50
+      1  100.0%        LazyCompile: ~readFileHandle node:internal/fs/promises:359:30
+      1  100.0%          /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~addEventListener node:internal/event_target:462:19
+      1  100.0%        LazyCompile: ~on node:internal/event_target:781:5
+      1  100.0%          LazyCompile: ~setupPortReferencing node:internal/worker/io:267:30
+      1  100.0%            LazyCompile: ~oninit node:internal/worker/io:208:16
+      1    1.1%      LazyCompile: ~addCatch node:events:347:18
+      1  100.0%        Function: ^emit node:events:474:44
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/monitor.js:200:52
+      1  100.0%            LazyCompile: ~callback /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1    1.1%      LazyCompile: ~_unrefTimer node:net:417:52
+      1  100.0%        LazyCompile: ~onWriteComplete node:internal/stream_base_commons:80:25
+      1    1.1%      LazyCompile: ~_storeHeader node:_http_outgoing:374:22
+      1  100.0%        LazyCompile: ~writeHead node:_http_server:269:19
+      1  100.0%          LazyCompile: ~writeHead /home/nadir/Desktop/desafiosBackEnd/node_modules/on-headers/index.js:28:29
+      1  100.0%            LazyCompile: ~writeHead /home/nadir/Desktop/desafiosBackEnd/node_modules/on-headers/index.js:28:29
+      1    1.1%      LazyCompile: ~_onceWrap node:events:650:19
+      1  100.0%        LazyCompile: ~once node:events:664:44
+      1  100.0%          LazyCompile: ~Socket.connect node:net:937:36
+      1  100.0%            LazyCompile: ~connect node:_tls_wrap:1597:35
+      1    1.1%      LazyCompile: ~_finish node:_http_server:203:52
+      1  100.0%        LazyCompile: ~end node:_http_outgoing:833:45
+      1  100.0%          LazyCompile: ~writeend /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:260:24
+      1  100.0%            LazyCompile: ~onsave /home/nadir/Desktop/desafiosBackEnd/node_modules/express-session/index.js:335:41
+      1    1.1%      LazyCompile: ~__generator /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:27:58
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:225:57
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:20:46
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~Topology /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/topology.js:40:16
+      1  100.0%        LazyCompile: ~createTopology /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/connect.js:32:67
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/connection_string.js:72:39
+      1    1.1%      LazyCompile: ~Socket node:net:283:16
+      1  100.0%        LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%            LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1    1.1%      LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%        LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~Readable.pipe node:internal/streams/readable:654:35
+      1  100.0%        LazyCompile: ~Connection /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection.js:40:16
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1  100.0%            LazyCompile: ~callback /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:254:31
+      1    1.1%      LazyCompile: ~ObjectId /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/objectid.js:23:22
+      1  100.0%        Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%          Function: ^deserializeObject /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:65:27
+      1  100.0%            Function: ^deserialize /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/parser/deserializer.js:36:21
+      1    1.1%      LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%        LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/modules/esm/translators:159:67
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/modules/esm/translators:231:36
+      1  100.0%            /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1    1.1%      LazyCompile: ~Long.negate /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:612:38
+      1  100.0%        Function: ^Long.neg /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:618:35
+      1  100.0%          LazyCompile: ~Long.subtract /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:719:40
+      1  100.0%            LazyCompile: ~Long.sub /home/nadir/Desktop/desafiosBackEnd/node_modules/bson/lib/long.js:725:35
+      1    1.1%      LazyCompile: ~Faker /home/nadir/Desktop/desafiosBackEnd/node_modules/faker/lib/index.js:24:16
+      1  100.0%        Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/faker/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    1.1%      LazyCompile: ~ConnectionPoolMonitoringEvent /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool_events.js:11:16
+      1  100.0%        LazyCompile: ~ConnectionPoolCreatedEvent /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool_events.js:24:16
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:77:26
+      1  100.0%            LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%      LazyCompile: ~ConnectionCheckedOutEvent /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool_events.js:115:16
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:457:32
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:364:44
+      1  100.0%            LazyCompile: ~callback /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1    1.1%      LazyCompile: ~ConnectionCheckOutStartedEvent /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool_events.js:90:16
+      1  100.0%        LazyCompile: ~checkOut /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:121:13
+      1  100.0%          LazyCompile: ~withConnection /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:250:19
+      1  100.0%            LazyCompile: ~command /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/sdam/server.js:151:12
+      1    1.1%      LazyCompile: ~<anonymous> node:internal/validators:84:3
+      1  100.0%        LazyCompile: ~<anonymous> node:internal/fs/utils:686:40
+      1  100.0%          LazyCompile: ~closeSync node:fs:526:19
+      1  100.0%            LazyCompile: ~readFileSync node:fs:450:22
+      1    1.1%      LazyCompile: ~<anonymous> node:internal/util:346:24
+      1  100.0%        /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1  100.0%          LazyCompile: ~fn node:internal/util:345:14
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express-handlebars/dist/express-handlebars.js:368:47
+      1    1.1%      LazyCompile: ~<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs/build/lib/yargs-factory.js:1245:13
+      1  100.0%        LazyCompile: ~YargsInstance file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs/build/lib/yargs-factory.js:76:16
+      1  100.0%          LazyCompile: ~<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/node_modules/yargs/build/lib/yargs-factory.js:27:12
+      1  100.0%            Script: ~<anonymous> file:///home/nadir/Desktop/desafiosBackEnd/config/index.js:1:1
+      1    1.1%      LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cursor/abstract_cursor.js:437:42
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cursor/find_cursor.js:54:72
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/utils.js:409:13
+      1  100.0%            LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/operations/execute_operation.js:53:70
+      1    1.1%      LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:265:23
+      1  100.0%        LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:457:32
+      1  100.0%          LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connection_pool.js:364:44
+      1  100.0%            LazyCompile: ~callback /home/nadir/Desktop/desafiosBackEnd/node_modules/mongodb/lib/cmap/connect.js:63:31
+      1    1.1%      LazyCompile: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/knex/lib/schema/builder.js:76:20
+      1  100.0%        /home/nadir/.nvm/versions/node/v16.14.2/bin/node
+      1  100.0%          Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/knex/lib/schema/builder.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1    1.1%      LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      1  100.0%        Function: ^emitReadable node:internal/streams/readable:563:22
+      1  100.0%          Function: ^onEofChunk node:internal/streams/readable:533:20
+      1  100.0%            Function: ^readableAddChunk node:internal/streams/readable:236:26
+      1    1.1%      Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/handlebars/dist/cjs/handlebars/decorators.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/colorette/index.cjs:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.1%      Function: ^wrapfunction /home/nadir/Desktop/desafiosBackEnd/node_modules/depd/index.js:397:23
+      1  100.0%        Function: ~<anonymous> /home/nadir/Desktop/desafiosBackEnd/node_modules/express/lib/request.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      Function: ^onStreamRead node:internal/stream_base_commons:167:22
+      1    1.1%      Function: ^getEncodingOps node:buffer:679:24
+      1  100.0%        Function: ^toString node:buffer:783:46
+      1  100.0%          LazyCompile: *readFileSync node:fs:450:22
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      1    1.1%      Function: ^emit node:events:474:44
+      1  100.0%        LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%          LazyCompile: ~flow node:internal/streams/readable:1008:14
+      1  100.0%            LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1    1.1%      Function: ^afterWrite node:internal/streams/writable:487:20
+      1  100.0%        Function: ^onwrite node:internal/streams/writable:425:17
+      1  100.0%          Function: ^onWriteComplete node:internal/stream_base_commons:80:25
+     14   10.9%    LazyCompile: *Socket._writeGeneric node:net:769:42
+     14  100.0%      Function: ^Socket._write node:net:806:35
+      8   57.1%        LazyCompile: *Writable.write node:internal/streams/writable:333:36
+      6   75.0%          Function: ^value node:internal/console/constructor:258:20
+      6  100.0%            Function: ^log node:internal/console/constructor:359:6
+      2   25.0%          Function: ^ondata node:internal/streams/readable:752:18
+      2  100.0%            LazyCompile: *readableAddChunk node:internal/streams/readable:236:26
+      6   42.9%        LazyCompile: *_write node:internal/streams/writable:283:16
+      6  100.0%          Function: ^Writable.write node:internal/streams/writable:333:36
+      3   50.0%            Function: ^value node:internal/console/constructor:258:20
+      3   50.0%            Function: ^ondata node:internal/streams/readable:752:18
+     10    7.8%    LazyCompile: *compileFunction node:vm:308:25
+      7   70.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1057:37
+      7  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      7  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3   30.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      3  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1057:37
+      3  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1112:37
+      3  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+

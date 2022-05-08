@@ -1,5 +1,6 @@
 import express from "express";
-import { fork } from "child_process";
+import calcRandoms from "./randoms.js";
+// import { fork } from "child_process";
 
 const { Router } = express;
 
@@ -12,13 +13,14 @@ routerRandoms.get("/", (req, res, next) => {
   if (!cant) {
     cant = 100000000;
   }
-  // Fork al calculo
-  const forked = fork("./routes/routerRandoms/randoms.js");
-  forked.send(`${cant}`);
-  forked.on("message", (calc) => {
-    // Renderizo el resultado
-    res.render("randoms", { randoms: calc });
-  });
+  // // Fork al calculo
+  // const forked = fork("./routes/routerRandoms/randoms.js");
+  // forked.send(`${cant}`);
+  // forked.on("message", (calc) => {
+  //   // Renderizo el resultado
+  //   res.render("randoms", { randoms: calc });
+  // });
+  res.render("randoms", { randoms: calcRandoms(cant) });
 });
 
 export default routerRandoms;

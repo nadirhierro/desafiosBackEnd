@@ -1,6 +1,7 @@
 import express from "express";
 import Products from "./products.js";
 import ProductsTest from "./products-test.js";
+import logger from "../../utils/loggers/log4js.js";
 
 const { Router } = express;
 
@@ -35,6 +36,9 @@ routerProductos.get("/:id", async (req, res, next) => {
     if (product) {
       res.json(product);
     } else {
+      logger.error(
+        `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
+      );
       res.json({ error: `No existe un producto con el id ${id}` });
     }
   } catch (err) {
@@ -50,6 +54,9 @@ routerProductos.put("/:id", async (req, res, next) => {
     if (productChanged) {
       res.json({ modificado: productChanged });
     } else {
+      logger.error(
+        `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
+      );
       res.json({ error: `No existe un producto con el id ${id}` });
     }
   } catch (err) {
@@ -64,6 +71,9 @@ routerProductos.delete("/:id", async (req, res, next) => {
     if (deleted) {
       res.json(`El producto con id ${id} fue eliminado`);
     } else {
+      logger.error(
+        `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
+      );
       res.json(`No existe un producto con el id ${id}`);
     }
   } catch (err) {

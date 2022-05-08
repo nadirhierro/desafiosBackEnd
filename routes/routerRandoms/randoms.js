@@ -25,3 +25,5 @@ process.on("message", (cant) => {
   process.send(calcRandoms(Number(cant)));
   process.exit();
 });
+
+export default calcRandoms;

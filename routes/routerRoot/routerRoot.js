@@ -3,8 +3,9 @@ import passport from "passport";
 import LocalStrategy from "passport-local";
 import FacebookStrategy from "passport-facebook";
 import { config } from "../../config/index.js";
+import logger from "../../utils/loggers/log4js.js";
 import cluster from "cluster";
-
+import gzip from "compression";
 const { Router } = express;
 
 let routerRoot = new Router();
