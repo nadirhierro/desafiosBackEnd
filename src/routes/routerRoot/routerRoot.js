@@ -68,24 +68,24 @@ passport.use(
   )
 );
 
-// // Serialize y desirialize para LocalStrategy
-// passport.serializeUser((user, done) => {
-//   done(null, user.username);
-// });
-
-// passport.deserializeUser((username, done) => {
-//   let user = users.find((user) => user.username == username);
-//   done(null, user);
-// });
-
-// Serialize y deserialize para Facebook
+// Serialize y desirialize para LocalStrategy
 passport.serializeUser((user, done) => {
+  done(null, user.username);
+});
+
+passport.deserializeUser((username, done) => {
+  let user = users.find((user) => user.username == username);
   done(null, user);
 });
 
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
+// // Serialize y deserialize para Facebook
+// passport.serializeUser((user, done) => {
+//   done(null, user);
+// });
+
+// passport.deserializeUser((obj, done) => {
+//   done(null, obj);
+// });
 
 // Index
 routerRoot.get("/", (req, res, next) => {
