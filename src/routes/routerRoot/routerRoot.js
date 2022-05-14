@@ -30,7 +30,8 @@ passport.use(
     {
       clientID: config.facebookID,
       clientSecret: config.facebookSecret,
-      callbackURL: "http://localhost:8080/auth/facebook/callback",
+      callbackURL:
+        "https://eccomerce-coder.herokuapp.com/auth/facebook/callback",
       profileFields: ["id", "displayName", "photos", "emails"],
     },
     (accessToken, refreshToken, profile, done) => {
