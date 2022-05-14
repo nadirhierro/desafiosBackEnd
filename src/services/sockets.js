@@ -17,7 +17,7 @@ const initSocket = (server) => {
     // Aquí escucho el canal products, cuando un cliente emite, recibe el producto
     // el servidor se encarga de hacer el post a través del fetch utilizando el router
     socket.on("products", (data) => {
-      fetch("http://localhost:8080/productos", {
+      fetch("https://eccomerce-coder.herokuapp.com/productos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -34,7 +34,7 @@ const initSocket = (server) => {
 
     //Misma lógica para los mensajes
     socket.on("chat", (data) => {
-      fetch("http://localhost:8080/mensajes", {
+      fetch("https://eccomerce-coder.herokuapp.com/mensajes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
