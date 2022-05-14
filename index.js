@@ -9,7 +9,7 @@ const numCPUs = os.cpus().length;
 // Si es CLUSTER, se inicia en modo cluster
 if (config.mode == "FORK") {
   httpServer.listen(config.port, config.host, () => {});
-  console.log(`Servidor funcionando en http://${config.host}:${config.port}`);
+  console.log(`Servidor funcionando en http://${config.host}`);
 } else if (config.mode == "CLUSTER") {
   if (cluster.isPrimary) {
     console.log(`Proceso principal ${process.pid} ejecutándose`);
@@ -24,7 +24,7 @@ if (config.mode == "FORK") {
   } else {
     httpServer.listen(config.port, config.host, () => {});
     console.log(
-      `Servidor funcionando en http://${config.host}:${config.port} || Worker ${process.pid}`
+      `Servidor funcionando en http://${config.host}|| Worker ${process.pid}`
     );
   }
 }

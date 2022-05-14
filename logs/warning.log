@@ -38,3 +38,6 @@
 [2022-05-07T21:42:30.160] [WARN] custom - Path: /assets/styles/main.css, Method: GET
 [2022-05-07T21:42:30.528] [WARN] custom - Path: /favicon.ico, Method: GET
 [2022-05-13T21:18:29.176] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T21:48:52.029] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T21:48:54.404] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T21:48:58.015] [WARN] custom - Path: /favicon.ico, Method: GET
