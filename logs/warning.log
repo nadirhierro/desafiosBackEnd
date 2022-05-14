@@ -45,3 +45,16 @@
 [2022-05-13T22:22:20.821] [WARN] custom - Path: /favicon.ico, Method: GET
 [2022-05-13T22:23:10.670] [WARN] custom - Path: /favicon.ico, Method: GET
 [2022-05-13T22:23:53.980] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:11:25.406] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:11:29.176] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:11:33.372] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:11:38.391] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:12:58.400] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:13:33.717] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:13:37.653] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:14:10.100] [WARN] custom - Path: /alt=%22%22, Method: GET
+[2022-05-13T23:14:10.465] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:14:51.329] [WARN] custom - Path: /assets/js/signup.js, Method: GET
+[2022-05-13T23:14:51.469] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-05-13T23:14:55.151] [WARN] custom - Path: /alt=%22%22, Method: GET
+[2022-05-13T23:14:55.209] [WARN] custom - Path: /favicon.ico, Method: GET
