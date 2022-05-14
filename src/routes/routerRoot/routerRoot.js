@@ -23,23 +23,23 @@ let isAuth = (req, res, next) => {
   }
 };
 
-// FacebookStrategy
-passport.use(
-  "loginfacebook",
-  new FacebookStrategy(
-    {
-      clientID: config.facebookID,
-      clientSecret: config.facebookSecret,
-      callbackURL:
-        "https://eccomerce-coder.herokuapp.com/auth/facebook/callback",
-      profileFields: ["id", "displayName", "photos", "emails"],
-    },
-    (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
-      done(null, profile);
-    }
-  )
-);
+// // FacebookStrategy
+// passport.use(
+//   "loginfacebook",
+//   new FacebookStrategy(
+//     {
+//       clientID: config.facebookID,
+//       clientSecret: config.facebookSecret,
+//       callbackURL:
+//         "https://eccomerce-coder.herokuapp.com/auth/facebook/callback",
+//       profileFields: ["id", "displayName", "photos", "emails"],
+//     },
+//     (accessToken, refreshToken, profile, done) => {
+//       console.log(profile);
+//       done(null, profile);
+//     }
+//   )
+// );
 
 // LocalStrategy
 
@@ -68,24 +68,24 @@ passport.use(
   )
 );
 
-// // Serialize y desirialize para LocalStrategy
-// passport.serializeUser((user, done) => {
-//   done(null, user.username);
-// });
-
-// passport.deserializeUser((username, done) => {
-//   let user = users.find((user) => user.username == username);
-//   done(null, user);
-// });
-
-// Serialize y deserialize para Facebook
+// Serialize y desirialize para LocalStrategy
 passport.serializeUser((user, done) => {
+  done(null, user.username);
+});
+
+passport.deserializeUser((username, done) => {
+  let user = users.find((user) => user.username == username);
   done(null, user);
 });
 
-passport.deserializeUser((obj, done) => {
-  done(null, obj);
-});
+// // Serialize y deserialize para Facebook
+// passport.serializeUser((user, done) => {
+//   done(null, user);
+// });
+
+// passport.deserializeUser((obj, done) => {
+//   done(null, obj);
+// });
 
 // Index
 routerRoot.get("/", (req, res, next) => {
@@ -161,7 +161,7 @@ routerRoot.get("/failsignup", (req, res, next) => {
 routerRoot.get("/home", isAuth, (req, res, next) => {
   res.render("home", {
     username: req.user.displayName,
-    photoUrl: req.user.photos[0].value,
+    photoUrl: req.user.photos,
     email: req.user.email,
   });
 });
