@@ -1,4 +1,4 @@
-import { db_knex_mysql } from "../../config/database.js";
+import { db_knex_mysql } from "../../../config/database.js";
 
 export default class Products {
   constructor() {

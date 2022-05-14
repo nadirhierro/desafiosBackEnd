@@ -1,5 +1,5 @@
 import express from "express";
-import calcRandoms from "./randoms.js";
+import calcRandoms from "../../utils/randoms/randoms.js";
 // import { fork } from "child_process";
 
 const { Router } = express;

@@ -1,6 +1,6 @@
 import express from "express";
-import Products from "./products.js";
-import ProductsTest from "./products-test.js";
+import Products from "../../components/containers/productsContainer/products.js";
+import ProductsTest from "../../components/containers/productsContainer/products-test.js";
 import logger from "../../utils/loggers/log4js.js";
 
 const { Router } = express;

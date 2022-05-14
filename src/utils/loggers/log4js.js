@@ -3,9 +3,9 @@ import log4js from "log4js";
 log4js.configure({
   appenders: {
     console: { type: "console" },
-    infoFile: { type: "file", filename: "info.log" },
-    warningFile: { type: "file", filename: "warning.log" },
-    errorFile: { type: "file", filename: "error.log" },
+    infoFile: { type: "file", filename: "./logs/info.log" },
+    warningFile: { type: "file", filename: "./logs/warning.log" },
+    errorFile: { type: "file", filename: "./logs/error.log" },
     // niveles
     loggerInfo: {
       type: "logLevelFilter",

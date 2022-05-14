@@ -1,9 +1,9 @@
 import * as fs from "node:fs";
-import fileContainer from "../../components/containers/fileContainer.js";
+import fileContainer from "../fileContainer.js";
 import {
   normalize,
   posts,
-} from "../../utils/messagesNormalizr/messagesNormalizr.js";
+} from "../../../utils/messagesNormalizr/messagesNormalizr.js";
 import moment from "moment";
 import util from "util";
 
@@ -15,7 +15,7 @@ function print(obj) {
 export default class Messages extends fileContainer {
   constructor(fileName) {
     super(fileName);
-    this.fileName = "./data/messages.json";
+    this.fileName = "./src/data/messages.json";
   }
 
   // Normalizar productos para el front

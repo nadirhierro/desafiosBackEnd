@@ -1,5 +1,5 @@
-import Messages from "./messages.js";
 import express from "express";
+import Messages from "../../components/containers/messagesContainer/messages.js";
 
 const { Router } = express;
 
