@@ -20557,3 +20557,5 @@
 [2022-05-13T21:49:26.735] [INFO] custom - Path: /mensajes, Method: GET
 [2022-05-13T21:50:25.740] [INFO] custom - Path: /mensajes, Method: GET
 [2022-05-13T21:50:25.895] [INFO] custom - Path: /productos, Method: GET
+[2022-05-13T21:53:36.757] [INFO] custom - Path: /productos, Method: GET
+[2022-05-13T21:53:36.764] [INFO] custom - Path: /mensajes, Method: GET
