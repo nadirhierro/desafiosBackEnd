@@ -1,26 +1,12 @@
 import express from "express";
-import calcRandoms from "../../utils/randoms/randoms.js";
-// import { fork } from "child_process";
+import RandomsController from "../../components/randoms/index.js";
+
+let controller = new RandomsController();
 
 const { Router } = express;
 
 let routerRandoms = new Router();
 
-// Tomo la cantidad por query, si no está definida la seteo en 100000000;
-
-routerRandoms.get("/", (req, res, next) => {
-  let cant = req.query.cant;
-  if (!cant) {
-    cant = 100000000;
-  }
-  // // Fork al calculo
-  // const forked = fork("./routes/routerRandoms/randoms.js");
-  // forked.send(`${cant}`);
-  // forked.on("message", (calc) => {
-  //   // Renderizo el resultado
-  //   res.render("randoms", { randoms: calc });
-  // });
-  res.render("randoms", { randoms: calcRandoms(cant) });
-});
+routerRandoms.get("/", controller.getRandoms);
 
 export default routerRandoms;

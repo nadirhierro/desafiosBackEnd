@@ -1,31 +1,14 @@
 import express from "express";
-import Messages from "../../components/containers/messagesContainer/messages.js";
+import MessagesController from "../../components/messages/index.js";
 
 const { Router } = express;
 
-const messages = new Messages();
+let controller = new MessagesController();
 
 let routerMessages = new Router();
 
-routerMessages.get("/", async (req, res, next) => {
-  try {
-    let data = await messages.getAllNormalized();
-    res.json(data);
-  } catch (err) {
-    console.log(err);
-  }
-});
+routerMessages.get("/", controller.getMessages);
 
-routerMessages.post("/", async (req, res, next) => {
-  try {
-    let data = req.body;
-    let saved = await messages.save(data);
-    if (saved) {
-      res.redirect("/");
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
+routerMessages.post("/", controller.postMessages);
 
 export default routerMessages;
