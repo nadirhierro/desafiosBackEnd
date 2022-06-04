@@ -1,11 +1,13 @@
 import * as fs from "node:fs";
 import moment from "moment";
 
+// Clase fileContainer
 export default class fileContainer {
   constructor(fileName) {
     this.fileName = fileName;
   }
 
+  // Función escribir archivo
   async write(data) {
     try {
       return await fs.promises.writeFile(
@@ -17,6 +19,7 @@ export default class fileContainer {
     }
   }
 
+  // Obtener toda la data
   async getAll() {
     try {
       let data = await fs.promises.readFile(`${this.fileName}`, "utf-8");
@@ -30,6 +33,7 @@ export default class fileContainer {
     }
   }
 
+  // Guardar nueva data
   async save(obj) {
     try {
       let data = await this.getAll();
@@ -51,6 +55,7 @@ export default class fileContainer {
     }
   }
 
+  // Cambiar un elemento
   async change(obj) {
     try {
       let data = await this.getAll();
@@ -71,6 +76,7 @@ export default class fileContainer {
     }
   }
 
+  // Obtener por id
   async getById(id) {
     try {
       let data = await this.getAll();
@@ -81,6 +87,7 @@ export default class fileContainer {
     }
   }
 
+  // Eliminar elemento por id
   async deleteById(id) {
     try {
       let data = await this.getAll();
@@ -96,6 +103,7 @@ export default class fileContainer {
     }
   }
 
+  // Eliminar todo
   async deleteAll() {
     try {
       await this.write([]);

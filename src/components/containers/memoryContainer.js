@@ -1,14 +1,17 @@
 import moment from "moment";
 
+// Clase memoryContainer
 export default class memoryContainer {
   constructor() {
     this.container = [];
   }
 
+  // Obtener container
   getAll() {
     return this.container;
   }
 
+  // Guardar un elemento
   save(obj) {
     let id = 1;
     if (this.container.length > 0) {
@@ -24,6 +27,7 @@ export default class memoryContainer {
     return id;
   }
 
+  // Cambiar un elemento
   change(obj) {
     let objInContainer = this.container.find(
       (element) => element._id == obj.id
@@ -44,11 +48,13 @@ export default class memoryContainer {
     }
   }
 
+  // Obtener un elemento por id
   getById(id) {
     let element = this.container.find((obj) => obj._id == id);
     return element;
   }
 
+  // Eliminar un elemento por id
   deleteById(id) {
     let obj = this.getById(id);
     if (obj) {
@@ -59,6 +65,7 @@ export default class memoryContainer {
     }
   }
 
+  // Vaciar container
   deleteAll() {
     this.container = [];
   }

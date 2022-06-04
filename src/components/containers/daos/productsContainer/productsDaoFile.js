@@ -1,13 +1,16 @@
 import fileContainer from "../../fileContainer.js";
 
+// Instancia empieza en null
 let instance = null;
 
+// Clase productsFile extensión de fileContainer
 export default class productsDaoFile extends fileContainer {
   constructor() {
     super();
-    this.fileName = "./src/data/products.json";
+    this.fileName = "./src/data/products.json"; // Defino el archivo
   }
 
+  // Método para devolver instancia una sola vez
   static getInstance() {
     if (!instance) {
       instance = new productsDaoFile();
@@ -15,6 +18,7 @@ export default class productsDaoFile extends fileContainer {
     return instance;
   }
 
+  // Valdiación de la data
   validate(product) {
     if (product.title && product.price && product.thumbnail) {
       return true;
@@ -23,6 +27,7 @@ export default class productsDaoFile extends fileContainer {
     }
   }
 
+  // Guardar un producto a través de la validación
   async save(obj) {
     try {
       if (this.validate(obj)) {
@@ -48,6 +53,7 @@ export default class productsDaoFile extends fileContainer {
     }
   }
 
+  // Cambiar un producto a través de la validación
   async change(obj) {
     try {
       if (this.validate(obj)) {

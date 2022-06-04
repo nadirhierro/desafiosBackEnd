@@ -1,12 +1,15 @@
 import memoryContainer from "../../memoryContainer.js";
 
+// Instancia empieza en null
 let instance = null;
 
+// Clase productsMemory extensión del memoryContainer
 export default class productsDaoMemory extends memoryContainer {
   constructor() {
     super();
   }
 
+  // Método para devolver instancia una sola vez
   static getInstance() {
     if (!instance) {
       instance = new productsDaoMemory();
@@ -14,6 +17,7 @@ export default class productsDaoMemory extends memoryContainer {
     return instance;
   }
 
+  // Valdiación de la data
   validate(product) {
     if (product.title && product.price && product.thumbnail) {
       return true;
@@ -22,6 +26,7 @@ export default class productsDaoMemory extends memoryContainer {
     }
   }
 
+  // Guardar un producto a través de la validación
   save(obj) {
     if (this.validate(obj)) {
       let id = 1;
@@ -41,6 +46,7 @@ export default class productsDaoMemory extends memoryContainer {
     }
   }
 
+  // Cambiar un producto a través de la validación
   change(obj) {
     if (this.validate(obj)) {
       let objInContainer = this.container.find(

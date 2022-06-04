@@ -1,11 +1,16 @@
-import Factory from "../../containers/daos/index.js";
+import daoFactory from "../../containers/daos/index.js";
 
-let factory = new Factory();
+// Inicio la daoFactory
+let factory = new daoFactory();
+
+// Clase ProductsService
 export default class ProductsService {
+  // Constructor que solicita la instancia correspondiente
   constructor() {
     this.dao = factory.createProductsDaoDB();
   }
 
+  // Método apra pedirle todos los productos al DAO
   async getProducts() {
     try {
       let products = await this.dao.getAll();
@@ -19,6 +24,7 @@ export default class ProductsService {
     }
   }
 
+  // Método para pedir guardar un producto al DAO
   async saveProduct(product) {
     try {
       let saved = await this.dao.save(product);

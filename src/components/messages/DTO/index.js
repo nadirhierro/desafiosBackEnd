@@ -1,3 +1,4 @@
+// Clase author
 class author {
   constructor(email, alias, name, surname, age, avatar) {
     this.email = email;
@@ -9,6 +10,7 @@ class author {
   }
 }
 
+// Clase messageSchema, que incluye a la clase author
 class messageSchema {
   constructor(
     id,
@@ -35,6 +37,7 @@ class messageSchema {
   }
 }
 
+// Clase messageDto, que tiene la estructura {id: "messages", messages:{},{}...,{}} e incorpora la clase messageSchema
 export default class messagesDto {
   constructor(messages) {
     (this.id = "messages"),

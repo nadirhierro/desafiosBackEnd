@@ -1,14 +1,17 @@
 import fileContainer from "../../fileContainer.js";
 import moment from "moment";
 
+// Instancia empieza en null
 let instance = null;
 
+// Clase messagesFile extensión de fileContainer
 export default class messagesDaoFile extends fileContainer {
   constructor(fileName) {
     super(fileName);
-    this.fileName = "./src/data/messages.json";
+    this.fileName = "./src/data/messages.json"; // Defino el archivo
   }
 
+  // Método para devolver instancia una sola vez
   static getInstance() {
     if (!instance) {
       instance = new messagesDaoFile();
@@ -16,7 +19,7 @@ export default class messagesDaoFile extends fileContainer {
     return instance;
   }
 
-  // Guardar productos
+  // Guardar un mensaje conservando el objeto para normalización
   async save(obj) {
     try {
       let object = await this.getAll();

@@ -1,8 +1,11 @@
+// Clase mongodbContainer
 export default class mongodbContainer {
+  // Constructor para definir el model
   constructor(model) {
     this.model = model;
   }
 
+  // Obtener todos los elementos de la colección
   async getAll() {
     try {
       let all = await this.model.find({});
@@ -12,6 +15,7 @@ export default class mongodbContainer {
     }
   }
 
+  // Guardar elemento en colección
   async save(obj) {
     try {
       let objModel = new this.model(obj);
@@ -22,6 +26,7 @@ export default class mongodbContainer {
     }
   }
 
+  // Cambiar elemento de colección
   async change(obj) {
     try {
       const res = await this.model.updateOne({ _id: obj.id }, obj);
@@ -31,6 +36,7 @@ export default class mongodbContainer {
     }
   }
 
+  // Obtener elemento de colección por id
   async getById(id) {
     try {
       let element = await this.model.find({ _id: id });
@@ -40,6 +46,7 @@ export default class mongodbContainer {
     }
   }
 
+  // Eliminar elemento de colección por id
   async deleteById(id) {
     try {
       let deletedElement = await this.model.deleteOne({ _id: id });
@@ -49,6 +56,7 @@ export default class mongodbContainer {
     }
   }
 
+  // Eliminar todos los elementos de la colección
   async deleteAll() {
     try {
       let deletedElement = await this.model.remove({});

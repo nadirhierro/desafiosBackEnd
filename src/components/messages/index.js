@@ -1,13 +1,16 @@
 import MessagesService from "./services/messagesService.js";
 
-const messages = new MessagesService();
-
+// Clase MessagesController
 export default class MessagesController {
-  constructor() {}
+  // Constructor que inicia el MessagesService
+  constructor() {
+    this.messages = new MessagesService();
+  }
 
+  // Método para devolver todos los mensajes a través de req
   async getMessages(req, res, next) {
     try {
-      let data = await messages.getMessages();
+      let data = await this.messages.getMessages();
       console.log(data);
       res.json(data);
     } catch (err) {
@@ -15,10 +18,11 @@ export default class MessagesController {
     }
   }
 
+  // Método para guardar un mensaje a través de req
   async postMessages(req, res, next) {
     try {
       let data = req.body;
-      let saved = await messages.saveMessage(data);
+      let saved = await this.messages.saveMessage(data);
       if (saved) {
         res.redirect("/");
       }
