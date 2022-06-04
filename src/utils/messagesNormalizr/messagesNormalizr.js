@@ -10,6 +10,7 @@ const messageSchema = new schema.Entity(
   { author: authorSchema },
   { idAttribute: "id" }
 );
+
 const posts = new schema.Entity("posts", {
   messages: [messageSchema],
 });

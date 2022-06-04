@@ -12,9 +12,7 @@ export default class MessagesService {
   async getMessages() {
     try {
       let allMessages = await this.messages.getMessages();
-      console.log(allMessages);
-      const dataParsed = JSON.stringify(allMessages);
-      const normalizedData = normalize(dataParsed, posts);
+      const normalizedData = normalize(allMessages, posts);
       return normalizedData;
     } catch (err) {
       console.log(err);
