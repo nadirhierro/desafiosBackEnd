@@ -62,7 +62,7 @@ formChat.addEventListener("submit", (event) => {
 });
 
 socket.on("chat", (data) => {
-  fetch("https://eccomerce-coder.herokuapp.com/mensajes")
+  fetch("http://localhost:8080/mensajes")
     .then(function (response) {
       return response.json();
     })

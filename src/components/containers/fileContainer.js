@@ -39,7 +39,7 @@ export default class fileContainer {
         id = Math.max.apply(null, ids) + 1;
       }
       let newObject = {
-        id: id,
+        _id: id,
         timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
         ...obj,
       };
@@ -54,7 +54,7 @@ export default class fileContainer {
   async change(obj) {
     try {
       let data = await this.getAll();
-      let objInData = data.find((element) => element.id == obj.id);
+      let objInData = data.find((item) => item._id == obj.id);
       if (objInData) {
         let newObject = {
           timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
@@ -74,7 +74,7 @@ export default class fileContainer {
   async getById(id) {
     try {
       let data = await this.getAll();
-      let element = data.find((obj) => obj.id == id);
+      let element = data.find((item) => item._id == id);
       return element;
     } catch (err) {
       return err;
@@ -84,7 +84,7 @@ export default class fileContainer {
   async deleteById(id) {
     try {
       let data = await this.getAll();
-      if (data.find((item) => item.id == id)) {
+      if (data.find((item) => item._id == id)) {
         let newData = data.filter((data) => data.id != id);
         await this.write(newData);
         return true;

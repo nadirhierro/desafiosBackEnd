@@ -8,6 +8,7 @@ export default class MessagesController {
   async getMessages(req, res, next) {
     try {
       let data = await messages.getMessages();
+      console.log(data);
       res.json(data);
     } catch (err) {
       console.log(err);
@@ -17,7 +18,7 @@ export default class MessagesController {
   async postMessages(req, res, next) {
     try {
       let data = req.body;
-      let saved = await messages.saveMessage();
+      let saved = await messages.saveMessage(data);
       if (saved) {
         res.redirect("/");
       }

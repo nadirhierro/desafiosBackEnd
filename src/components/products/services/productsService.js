@@ -1,16 +1,19 @@
-import Products from "../../containers/productsContainer/products.js";
-import ProductsTest from "../../containers/productsContainer/products-test.js";
+import Factory from "../../containers/daos/index.js";
 
-const products = new Products();
-const productsFake = new ProductsTest();
-
+let factory = new Factory();
 export default class ProductsService {
-  constructor() {}
+  constructor() {
+    this.dao = factory.createProductsDaoDB();
+  }
 
   async getProducts() {
     try {
-      let products = await productsFake.getProducts();
-      return products;
+      let products = await this.dao.getAll();
+      if (products) {
+        return products;
+      } else {
+        return [];
+      }
     } catch (err) {
       console.log(err);
     }
@@ -18,7 +21,7 @@ export default class ProductsService {
 
   async saveProduct(product) {
     try {
-      let saved = await products.save(product);
+      let saved = await this.dao.save(product);
       return saved;
     } catch (err) {
       console.log(err);
@@ -27,7 +30,7 @@ export default class ProductsService {
 
   async getProductById(id) {
     try {
-      let product = await products.getProductById(id);
+      let product = await this.dao.getById(id);
       return product;
     } catch (err) {
       console.log(err);
@@ -36,7 +39,7 @@ export default class ProductsService {
 
   async changeProduct(id, newData) {
     try {
-      let changed = await products.change(Number(id), newData);
+      let changed = await this.dao.change(Number(id), newData);
       return changed;
     } catch (err) {
       console.log(err);
@@ -45,7 +48,7 @@ export default class ProductsService {
 
   async deleteProduct(id) {
     try {
-      let deleted = products.delete(id);
+      let deleted = await this.dao.delete(id);
       return deleted;
     } catch (err) {
       console.log(err);

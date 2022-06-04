@@ -1,22 +1,29 @@
-import Messages from "../../containers/messagesContainer/index.js";
-
-const messages = new Messages();
+import messagesRepository from "../Repository/messagesRepository.js";
+import {
+  normalize,
+  posts,
+} from "../../../utils/messagesNormalizr/messagesNormalizr.js";
 
 export default class MessagesService {
-  constructor() {}
+  constructor() {
+    this.messages = new messagesRepository();
+  }
 
   async getMessages() {
     try {
-      let allMessages = await messages.getAllNormalized();
-      return allMessages;
+      let allMessages = await this.messages.getMessages();
+      console.log(allMessages);
+      const dataParsed = JSON.stringify(allMessages);
+      const normalizedData = normalize(dataParsed, posts);
+      return normalizedData;
     } catch (err) {
       console.log(err);
     }
   }
 
-  async saveMessage() {
+  async saveMessage(data) {
     try {
-      let saved = await messages.save(data);
+      let saved = await this.messages.save(data);
       return saved;
     } catch (err) {
       console.log(err);

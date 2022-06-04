@@ -9,6 +9,7 @@ const yargs = _yargs(process.argv.slice(2));
 const args = yargs.default({
   port: process.env.PORT,
   mode: process.env.MODE,
+  container_type: "file",
 }).argv;
 delete args["_"];
 delete args["$0"];
@@ -23,6 +24,7 @@ let config = {
   maxAge: process.env.TIEMPO_EXPIRACION,
   facebookID: process.env.FACEBOOK_APP_ID,
   facebookSecret: process.env.FACEBOOK_APP_SECRET,
+  container_type: args.container_type,
 };
 
 let db = {

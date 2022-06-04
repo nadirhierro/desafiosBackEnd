@@ -7,7 +7,7 @@ export default class ProductsController {
   constructor() {}
   async getProducts(req, res, next) {
     try {
-      let allProducts = products.getProducts();
+      let allProducts = await products.getProducts();
       res.json(allProducts);
     } catch (err) {
       console.log(err);

@@ -53,7 +53,7 @@ formProducts.addEventListener("submit", (event) => {
 
 // Socket on escuchando la señal de que se actualizaron los productos, renderiza nuevamente
 socket.on("products", (data) => {
-  fetch("https://eccomerce-coder.herokuapp.com/productos")
+  fetch("http://localhost:8080/productos")
     .then(function (response) {
       return response.json();
     })
