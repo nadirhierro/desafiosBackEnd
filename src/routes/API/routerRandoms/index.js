@@ -1,5 +1,5 @@
 import express from "express";
-import RandomsController from "../../components/randoms/index.js";
+import RandomsController from "../../../components/randoms/index.js";
 
 let controller = new RandomsController();
 

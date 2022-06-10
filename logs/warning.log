@@ -80,3 +80,6 @@
 [2022-06-04T02:44:24.627] [WARN] custom - Path: /favicon.ico, Method: GET
 [2022-06-04T02:46:37.813] [WARN] custom - Path: /alt=%22%22, Method: GET
 [2022-06-04T02:46:38.384] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-06-09T21:40:41.384] [WARN] custom - Path: /productos, Method: GET
+[2022-06-09T21:40:41.747] [WARN] custom - Path: /favicon.ico, Method: GET
+[2022-06-09T21:43:34.832] [WARN] custom - Path: /favicon.ico, Method: GET

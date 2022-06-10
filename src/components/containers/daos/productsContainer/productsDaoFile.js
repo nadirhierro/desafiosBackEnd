@@ -18,36 +18,22 @@ export default class productsDaoFile extends fileContainer {
     return instance;
   }
 
-  // Valdiación de la data
-  validate(product) {
-    if (product.title && product.price && product.thumbnail) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   // Guardar un producto a través de la validación
   async save(obj) {
     try {
-      if (this.validate(obj)) {
-        let data = await this.getAll();
-        let id = 1;
-        if (data.length > 0) {
-          let ids = data.map((item) => item.id);
-          id = Math.max.apply(null, ids) + 1;
-        }
-        let newObject = {
-          _id: id,
-          timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
-          ...obj,
-        };
-        data.push(newObject);
-        await this.write(data);
-        return id;
-      } else {
-        return { error: "Objeto inválido" };
+      let data = await this.getAll();
+      let id = 1;
+      if (data.length > 0) {
+        let ids = data.map((item) => item._id);
+        id = Math.max.apply(null, ids) + 1;
       }
+      let newObject = {
+        _id: id,
+        ...obj,
+      };
+      data.push(newObject);
+      await this.write(data);
+      return newObject;
     } catch (err) {
       return err;
     }
@@ -56,20 +42,16 @@ export default class productsDaoFile extends fileContainer {
   // Cambiar un producto a través de la validación
   async change(obj) {
     try {
-      if (this.validate(obj)) {
-        let data = await this.getAll();
-        let objInData = data.find((item) => item._id == obj.id);
-        if (objInData) {
-          let newObject = {
-            timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
-            ...obj,
-          };
-          data.splice(data.indexOf(objInData), 1, newObject);
-          await this.write(data);
-          return true;
-        } else {
-          return false;
-        }
+      let data = await this.getAll();
+      let objInData = data.find((item) => item._id == obj._id);
+      if (objInData) {
+        let newObject = {
+          ...obj,
+        };
+        data.splice(data.indexOf(objInData), 1, newObject);
+        await this.write(data);
+        console.log(obj);
+        return newObject;
       } else {
         return { error: "Objeto inválido" };
       }

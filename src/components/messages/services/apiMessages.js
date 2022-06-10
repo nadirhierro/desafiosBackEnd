@@ -1,14 +1,29 @@
-import messagesRepository from "../Repository/messagesRepository.js";
+import daoFactory from "../../containers/daos/index.js";
+import Messages from "../../../models/messages/index.js";
 import {
   normalize,
   posts,
 } from "../../../utils/messagesNormalizr/messagesNormalizr.js";
 
+// Inicio la daoFactory
+let factory = new daoFactory();
+
 // Clase MessagesService
-export default class MessagesService {
+export default class apiMessages {
   // Inserto el repositorio en su constructor
   constructor() {
-    this.messages = new messagesRepository();
+    this.messages = factory.createMessagesDaoDB();
+  }
+
+  static getValidation(message) {
+    try {
+      Messages.validate(message);
+    } catch (err) {
+      throw new Error(
+        "El mensaje posee un formato inválido o falta información" +
+          err.details[0].message
+      );
+    }
   }
 
   // Método para tomar mensajes del repositorio y devolverlos normalizados al controlador
@@ -25,6 +40,7 @@ export default class MessagesService {
   // Método para guardar un mensaje
   async saveMessage(data) {
     try {
+      this.getValidation(data);
       let saved = await this.messages.save(data);
       return saved;
     } catch (err) {

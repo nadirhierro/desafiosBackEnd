@@ -1,13 +1,25 @@
 import daoFactory from "../../containers/daos/index.js";
+import ProductsSchema from "../../../models/products/index.js";
 
 // Inicio la daoFactory
 let factory = new daoFactory();
 
 // Clase ProductsService
-export default class ProductsService {
+export default class apiProducts {
   // Constructor que solicita la instancia correspondiente
   constructor() {
     this.dao = factory.createProductsDaoDB();
+  }
+
+  static getValidation(message, required) {
+    try {
+      ProductsSchema.validate(message, required);
+    } catch (err) {
+      throw new Error(
+        "El mensaje posee un formato inválido o falta información" +
+          err.details[0].message
+      );
+    }
   }
 
   // Método apra pedirle todos los productos al DAO
@@ -27,6 +39,7 @@ export default class ProductsService {
   // Método para pedir guardar un producto al DAO
   async saveProduct(product) {
     try {
+      apiProducts.getValidation(product, true);
       let saved = await this.dao.save(product);
       return saved;
     } catch (err) {
@@ -45,7 +58,9 @@ export default class ProductsService {
 
   async changeProduct(id, newData) {
     try {
-      let changed = await this.dao.change(Number(id), newData);
+      apiProducts.getValidation(newData, false);
+      let changed = await this.dao.change({ _id: Number(id), ...newData });
+      console.log(newData);
       return changed;
     } catch (err) {
       console.log(err);
@@ -54,7 +69,7 @@ export default class ProductsService {
 
   async deleteProduct(id) {
     try {
-      let deleted = await this.dao.delete(id);
+      let deleted = await this.dao.deleteById(id);
       return deleted;
     } catch (err) {
       console.log(err);

@@ -1,5 +1,4 @@
 import * as fs from "node:fs";
-import moment from "moment";
 
 // Clase fileContainer
 export default class fileContainer {
@@ -39,12 +38,11 @@ export default class fileContainer {
       let data = await this.getAll();
       let id = 1;
       if (data.length > 0) {
-        let ids = data.map((item) => item.id);
+        let ids = data.map((item) => item._id);
         id = Math.max.apply(null, ids) + 1;
       }
       let newObject = {
         _id: id,
-        timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
         ...obj,
       };
       data.push(newObject);
@@ -59,10 +57,9 @@ export default class fileContainer {
   async change(obj) {
     try {
       let data = await this.getAll();
-      let objInData = data.find((item) => item._id == obj.id);
+      let objInData = data.find((item) => item._id == obj._id);
       if (objInData) {
         let newObject = {
-          timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
           ...obj,
         };
         data.splice(data.indexOf(objInData), 1, newObject);
@@ -92,7 +89,7 @@ export default class fileContainer {
     try {
       let data = await this.getAll();
       if (data.find((item) => item._id == id)) {
-        let newData = data.filter((data) => data.id != id);
+        let newData = data.filter((data) => data._id != id);
         await this.write(newData);
         return true;
       } else {

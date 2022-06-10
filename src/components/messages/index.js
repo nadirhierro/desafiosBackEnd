@@ -1,10 +1,10 @@
-import MessagesService from "./services/messagesService.js";
+import apiMessages from "./services/apiMessages.js";
 
 // Clase MessagesController
 export default class MessagesController {
   // Constructor que inicia el MessagesService
   constructor() {
-    this.messages = new MessagesService();
+    this.messages = new apiMessages();
   }
 
   // Método para devolver todos los mensajes a través de req

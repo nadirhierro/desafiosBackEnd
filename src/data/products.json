@@ -1,8 +1,32 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "title": "Birome",
     "price": 125,
     "thumbnail": "http://www.clipsvirtual.com.ar/wp-content/uploads/2021/05/BIROME-PAPER-MATE-KILOMETRICO-AZUL.jpg"
+  },
+  {
+    "_id": 6,
+    "title": "Pants",
+    "price": "983.00",
+    "thumbnail": "http://placeimg.com/600/600/people"
+  },
+  {
+    "_id": 7,
+    "title": "Mouse",
+    "price": "964.00",
+    "thumbnail": "http://placeimg.com/600/600/food"
+  },
+  {
+    "_id": 8,
+    "title": "Sausages",
+    "price": "988.00",
+    "thumbnail": "http://placeimg.com/600/600/nightlife"
+  },
+  {
+    "_id": 9,
+    "title": "Chicken",
+    "price": "768.00",
+    "thumbnail": "http://placeimg.com/600/600/nightlife"
   }
 ]

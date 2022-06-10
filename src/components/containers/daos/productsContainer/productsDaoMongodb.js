@@ -1,5 +1,6 @@
 import mongodbContainer from "../../mongodbContainer.js";
 import { productModel } from "../../../../models/index.js";
+import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;

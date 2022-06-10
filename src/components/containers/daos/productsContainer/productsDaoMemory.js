@@ -1,4 +1,5 @@
 import memoryContainer from "../../memoryContainer.js";
+import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;
@@ -15,15 +16,6 @@ export default class productsDaoMemory extends memoryContainer {
       instance = new productsDaoMemory();
     }
     return instance;
-  }
-
-  // Valdiación de la data
-  validate(product) {
-    if (product.title && product.price && product.thumbnail) {
-      return true;
-    } else {
-      return false;
-    }
   }
 
   // Guardar un producto a través de la validación

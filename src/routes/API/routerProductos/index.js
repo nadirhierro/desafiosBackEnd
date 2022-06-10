@@ -1,5 +1,5 @@
 import express from "express";
-import ProductsController from "../../components/products/index.js";
+import ProductsController from "../../../components/products/index.js";
 
 let controller = new ProductsController();
 

@@ -1,5 +1,6 @@
 import fileContainer from "../../fileContainer.js";
 import moment from "moment";
+import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;

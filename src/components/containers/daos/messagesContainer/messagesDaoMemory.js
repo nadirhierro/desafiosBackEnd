@@ -1,4 +1,5 @@
 import memoryContainer from "../../memoryContainer.js";
+import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;
