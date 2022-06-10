@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test-axios": "node index.axiostest.js",
+    "test-mocha": "mocha index.mochatest.js",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },

@@ -55,6 +55,7 @@ export default class ProductsController {
       console.log(newData);
       let productChanged = await products.changeProduct(Number(id), newData);
       if (productChanged) {
+        console.log(productChanged);
         res.json(productChanged);
       } else {
         logger.error(
@@ -71,9 +72,9 @@ export default class ProductsController {
   async deleteProductById(req, res, next) {
     try {
       let { id } = req.params;
-      let deleted = products.deleteProduct(Number(id));
+      let deleted = await products.deleteProduct(Number(id));
       if (deleted) {
-        res.json(`El producto con id ${id} fue eliminado`);
+        res.json(deleted);
       } else {
         logger.error(
           `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`

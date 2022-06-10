@@ -50,7 +50,7 @@ export default class mongodbContainer {
   async deleteById(id) {
     try {
       let deletedElement = await this.model.deleteOne({ _id: id });
-      return deletedElement;
+      return id;
     } catch (err) {
       console.log(err);
     }

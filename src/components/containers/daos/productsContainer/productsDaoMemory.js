@@ -1,5 +1,4 @@
 import memoryContainer from "../../memoryContainer.js";
-import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;
@@ -28,11 +27,10 @@ export default class productsDaoMemory extends memoryContainer {
       }
       let newObject = {
         _id: id,
-        timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
         ...obj,
       };
       this.container.push(newObject);
-      return id;
+      return newObject;
     } else {
       return { error: "Objeto inválido" };
     }
@@ -46,7 +44,7 @@ export default class productsDaoMemory extends memoryContainer {
       );
       if (objInContainer) {
         let newObject = {
-          timestamp: moment().format("DD/MM/YYYY HH:MM:SS"),
+          ...objInData,
           ...obj,
         };
         this.container.splice(
@@ -54,7 +52,7 @@ export default class productsDaoMemory extends memoryContainer {
           1,
           newObject
         );
-        return true;
+        return newObject;
       } else {
         return false;
       }

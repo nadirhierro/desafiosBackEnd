@@ -46,6 +46,7 @@ export default class productsDaoFile extends fileContainer {
       let objInData = data.find((item) => item._id == obj._id);
       if (objInData) {
         let newObject = {
+          ...objInData,
           ...obj,
         };
         data.splice(data.indexOf(objInData), 1, newObject);

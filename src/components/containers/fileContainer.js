@@ -91,7 +91,7 @@ export default class fileContainer {
       if (data.find((item) => item._id == id)) {
         let newData = data.filter((data) => data._id != id);
         await this.write(newData);
-        return true;
+        return id;
       } else {
         return false;
       }

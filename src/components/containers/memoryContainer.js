@@ -59,7 +59,7 @@ export default class memoryContainer {
     let obj = this.getById(id);
     if (obj) {
       this.container.splice(this.container.indexOf(obj), 1);
-      return true;
+      return id;
     } else {
       return false;
     }
