@@ -12,6 +12,9 @@ import log from "../utils/loggers/logInfo.js";
 import cors from "cors";
 import { config, db } from "../config/index.js";
 import router from "../routes/index.js";
+import { graphqlHTTP } from "express-graphql";
+import schema from "../utils/graphql/schema.js";
+import functions from "../utils/graphql/index.js";
 
 // Inicialización de server y sockets
 const app = express();
@@ -54,6 +57,15 @@ app.use(log);
 // Router
 
 app.use("/", router);
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema: schema,
+    rootValue: { ...functions },
+    graphiql: true,
+  })
+);
 
 app.get("*", (req, res, next) => {
   logger.warn(`Path: ${req.path}, Method: ${req.method}`);

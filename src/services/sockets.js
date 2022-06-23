@@ -1,5 +1,4 @@
 import { Server } from "socket.io";
-import fetch from "node-fetch";
 
 let io;
 
@@ -17,36 +16,12 @@ const initSocket = (server) => {
     // Aquí escucho el canal products, cuando un cliente emite, recibe el producto
     // el servidor se encarga de hacer el post a través del fetch utilizando el router
     socket.on("products", (data) => {
-      fetch("https://eccomerce-coder.herokuapp.com/productos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-        .then((res) => {
-          // Una vez se realiza el post, se emite el mensaje de respuesta
-          // así se les actualiza la vista a los clientes
-          io.sockets.emit("products", res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      io.sockets.emit("products", "actualizar");
     });
 
     //Misma lógica para los mensajes
     socket.on("chat", (data) => {
-      fetch("https://eccomerce-coder.herokuapp.com/mensajes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-        .then((res) => {
-          // Una vez se realiza el post, se emite el mensaje de respuesta
-          // así se les actualiza la vista a los clientes
-          io.sockets.emit("chat", res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      io.sockets.emit("chat", "actualizar");
     });
   });
 

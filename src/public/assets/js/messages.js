@@ -1,19 +1,5 @@
 let formChat = document.getElementById("messages");
 
-// Llamado a normalizr y schemas
-const denormalize = normalizr.denormalize;
-const schema = normalizr.schema;
-
-const authorSchema = new schema.Entity("authors", {}, { idAttribute: "email" });
-const messageSchema = new schema.Entity(
-  "messages",
-  { author: authorSchema },
-  { idAttribute: "id" }
-);
-const posts = new schema.Entity("posts", {
-  messages: [messageSchema],
-});
-
 // template para chat
 let templateChat = `
     {{#each messages}}
@@ -57,38 +43,52 @@ formChat.addEventListener("submit", (event) => {
   ) {
     window.location.reload();
   } else {
-    socket.emit("chat", data);
+    fetch("http://localhost:8080/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `
+      mutation {
+        createMessage(data: {
+          author: {
+            email: "${email}",
+            alias: "${alias}",
+            name: "${name}",
+            surname: "${surname}",
+            age: ${age},
+            avatar: "${avatar}"
+          },
+          message: "${message}"
+        }){id}
+      }
+      `,
+      }),
+    })
+      .then((res) => {
+        // Una vez se realiza el post, se emite el mensaje de respuesta
+        // así se les actualiza la vista a los clientes
+        socket.emit("chat", "actualizar");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 });
 
 socket.on("chat", (data) => {
-  fetch("http://localhost:8080/mensajes")
+  fetch(
+    "http://localhost:8080/graphql?query=query{getMessages{id,timestamp,author{email,alias,name,surname,age,avatar},message}}"
+  )
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
-      // Desnormalizar
-      const denormalizedJson = denormalize(json.result, posts, json.entities);
-
-      // Tamaños
-      let denormalizedSize = JSON.stringify(denormalizedJson).length;
-      let normalizedSize = JSON.stringify(json).length;
-
-      // Cálculo de porcentaje
-      let percentage = (
-        100 -
-        (normalizedSize * 100) / denormalizedSize
-      ).toFixed(2);
-
-      // Template e inserción en html
+      console.log(json.data.getMessages);
       const template = Handlebars.compile(templateChat);
       const html = template({
-        messages: denormalizedJson.messages,
+        messages: json.data.getMessages,
       });
       document.getElementById("mensajes").innerHTML = html;
-      document.getElementById(
-        "percentage"
-      ).innerHTML = `Porcentaje de compresión: ${percentage}%`;
     })
     .catch((err) => {
       console.log(err);
