@@ -1,15 +1,20 @@
 import cluster from "cluster";
 import os from "os";
-import { config } from "./src/config/index.js";
-import { httpServer } from "./src/services/server.js";
+import config from "./src/config/index.js";
+import app from "./src/services/server.js";
 
 const numCPUs = os.cpus().length;
 
 // Si el parametro mode es FORK, se inicia el server en modo fork
 // Si es CLUSTER, se inicia en modo cluster
 if (config.mode == "FORK") {
-  httpServer.listen(config.port, () => {});
-  console.log(`Escuchando en puerto ${config.port}`);
+  const server = app.listen(config.port, () => {
+    console.log(
+      `Servidor Koa escuchando en el puerto ${server.address().port}`
+    );
+  });
+
+  server.on("error", (error) => console.log("Error de servidor Koa:", error));
 } else if (config.mode == "CLUSTER") {
   if (cluster.isPrimary) {
     console.log(`Proceso principal ${process.pid} ejecutándose`);
@@ -22,7 +27,12 @@ if (config.mode == "FORK") {
       cluster.fork();
     });
   } else {
-    httpServer.listen(config.port, () => {});
-    console.log(`Escuchando en puerto ${config.port} || Worker ${process.pid}`);
+    const server = app.listen(config.port, () => {
+      console.log(
+        `Servidor Koa escuchando en el puerto ${server.address().port}`
+      );
+    });
+
+    server.on("error", (error) => console.log("Error de servidor Koa:", error));
   }
 }

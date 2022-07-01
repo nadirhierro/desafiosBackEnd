@@ -1,6 +1,5 @@
 import fileContainer from "../../fileContainer.js";
 import moment from "moment";
-import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;
@@ -37,7 +36,7 @@ export default class messagesDaoFile extends fileContainer {
       };
       data.push(newObject);
       await this.write({ id: "messages", messages: data });
-      return id;
+      return newObject;
     } catch (err) {
       return err;
     }

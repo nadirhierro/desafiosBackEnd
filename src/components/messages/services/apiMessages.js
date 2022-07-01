@@ -1,9 +1,5 @@
 import daoFactory from "../../containers/daos/index.js";
 import Messages from "../../../models/messages/index.js";
-import {
-  normalize,
-  posts,
-} from "../../../utils/messagesNormalizr/messagesNormalizr.js";
 
 // Inicio la daoFactory
 let factory = new daoFactory();
@@ -20,8 +16,7 @@ export default class apiMessages {
       Messages.validate(message);
     } catch (err) {
       throw new Error(
-        "El mensaje posee un formato inválido o falta información" +
-          err.details[0].message
+        "El mensaje posee un formato inválido o falta información"
       );
     }
   }
@@ -29,9 +24,8 @@ export default class apiMessages {
   // Método para tomar mensajes del repositorio y devolverlos normalizados al controlador
   async getMessages() {
     try {
-      let allMessages = await this.messages.getMessages();
-      const normalizedData = normalize(allMessages, posts);
-      return normalizedData;
+      let allMessages = await this.messages.getAll();
+      return allMessages;
     } catch (err) {
       console.log(err);
     }
@@ -40,7 +34,7 @@ export default class apiMessages {
   // Método para guardar un mensaje
   async saveMessage(data) {
     try {
-      this.getValidation(data);
+      apiMessages.getValidation(data);
       let saved = await this.messages.save(data);
       return saved;
     } catch (err) {

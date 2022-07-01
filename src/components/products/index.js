@@ -1,5 +1,4 @@
 import apiProducts from "./services/apiProducts.js";
-import logger from "../../utils/loggers/log4js.js";
 
 let products = new apiProducts();
 
@@ -9,38 +8,53 @@ export default class ProductsController {
   constructor() {}
 
   // Método para pedir al servicio devolver todos los productos a través de req
-  async getProducts(req, res, next) {
+  async getProducts(ctx, next) {
     try {
       let allProducts = await products.getProducts();
-      res.json(allProducts);
+      ctx.body = { status: "success", products: allProducts };
     } catch (err) {
       console.log(err);
     }
   }
 
   // Método para pedir al servicio guardar un producto a través de req
-  async postProduct(req, res, next) {
+  async postProduct(ctx, next) {
     try {
-      let product = req.body;
-      let saved = await products.saveProduct(product);
-      res.json(saved);
+      if (
+        !ctx.request.body.title ||
+        !ctx.request.body.price ||
+        !ctx.request.body.thumbnail
+      ) {
+        ctx.response.status = 400;
+        ctx.body = { status: "error", message: "Falta información" };
+      } else {
+        let product = ctx.request.body;
+        let saved = await products.saveProduct(product);
+        ctx.response.status = 201;
+        ctx.body = {
+          status: "success",
+          newProduct: saved,
+        };
+      }
     } catch (err) {
       console.log(err);
     }
   }
 
   // Método para pedir al servicio obtener un producto a través de req
-  async getProductById(req, res, next) {
+  async getProductById(ctx, next) {
     try {
-      let { id } = req.params;
+      let id = ctx.params.id;
       let product = await products.getProductById(Number(id));
       if (product) {
-        res.json(product);
+        ctx.response.status = 201;
+        ctx.body = { status: "success", mesage: product };
       } else {
-        logger.error(
-          `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
-        );
-        res.json({ error: `No existe un producto con el id ${id}` });
+        ctx.response.status = 400;
+        ctx.body = {
+          status: "error",
+          message: `No existe un producto con el id ${id}`,
+        };
       }
     } catch (err) {
       console.log(err);
@@ -48,20 +62,29 @@ export default class ProductsController {
   }
 
   // Método para pedir al servicio cambiar un producto a través de req
-  async changeProductById(req, res, next) {
+  async changeProductById(ctx, next) {
     try {
-      let { id } = req.params;
-      let newData = req.body;
-      console.log(newData);
-      let productChanged = await products.changeProduct(Number(id), newData);
-      if (productChanged) {
-        console.log(productChanged);
-        res.json(productChanged);
+      if (
+        !ctx.request.body.title &&
+        !ctx.request.body.price &&
+        !ctx.request.body.thumbnail
+      ) {
+        ctx.response.status = 400;
+        ctx.body = {
+          status: "error",
+          message: `No existe un producto con el id ${id}`,
+        };
       } else {
-        logger.error(
-          `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
-        );
-        res.json({ error: `No existe un producto con el id ${id}` });
+        let id = ctx.params.id;
+        let newData = ctx.request.body;
+        let productChanged = await products.changeProduct(Number(id), newData);
+        if (productChanged) {
+          ctx.response.status = 201;
+          ctx.body = {
+            status: "success",
+            newProductData: productChanged,
+          };
+        }
       }
     } catch (err) {
       console.log(err);
@@ -69,17 +92,22 @@ export default class ProductsController {
   }
 
   // Método para pedir a servicio eliminar un producto a través de req
-  async deleteProductById(req, res, next) {
+  async deleteProductById(ctx, next) {
     try {
-      let { id } = req.params;
+      let id = ctx.params.id;
       let deleted = await products.deleteProduct(Number(id));
       if (deleted) {
-        res.json(deleted);
+        ctx.response.status = 201;
+        ctx.body = {
+          status: "success",
+          mesage: `Producto con id ${id} eliminado`,
+        };
       } else {
-        logger.error(
-          `Path: ${req.originalUrl}, Method: ${req.method} No existe un producto con el id ${id}`
-        );
-        res.json(`No existe un producto con el id ${id}`);
+        ctx.response.status = 400;
+        ctx.body = {
+          status: "error",
+          message: `No existe un producto con el id ${id}`,
+        };
       }
     } catch (err) {
       console.log(err);

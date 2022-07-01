@@ -4,5 +4,17 @@
     "title": "Birome",
     "price": 125,
     "thumbnail": "http://www.clipsvirtual.com.ar/wp-content/uploads/2021/05/BIROME-PAPER-MATE-KILOMETRICO-AZUL.jpg"
+  },
+  {
+    "_id": 3,
+    "title": "Pilar",
+    "price": 150,
+    "thumbnail": "http://www.clipsvirtual.com.ar/wp-content/uploads/2021/05/BIROME-PAPER-MATE-KILOMETRICO-AZUL.jpg"
+  },
+  {
+    "_id": 4,
+    "title": "Pilar",
+    "price": 150,
+    "thumbnail": "http://www.clipsvirtual.com.ar/wp-content/uploads/2021/05/BIROME-PAPER-MATE-KILOMETRICO-AZUL.jpg"
   }
 ]

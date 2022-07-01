@@ -47,7 +47,7 @@ export default class fileContainer {
       };
       data.push(newObject);
       await this.write(data);
-      return id;
+      return newObject;
     } catch (err) {
       return err;
     }
@@ -64,7 +64,7 @@ export default class fileContainer {
         };
         data.splice(data.indexOf(objInData), 1, newObject);
         await this.write(data);
-        return true;
+        return newObject;
       } else {
         return false;
       }

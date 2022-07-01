@@ -24,7 +24,7 @@ export default class memoryContainer {
       ...obj,
     };
     this.container.push(newObject);
-    return id;
+    return newObject;
   }
 
   // Cambiar un elemento
@@ -42,7 +42,7 @@ export default class memoryContainer {
         1,
         newObject
       );
-      return true;
+      return newObject;
     } else {
       return false;
     }
@@ -68,5 +68,6 @@ export default class memoryContainer {
   // Vaciar container
   deleteAll() {
     this.container = [];
+    return this.container;
   }
 }

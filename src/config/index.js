@@ -19,21 +19,9 @@ console.log(args);
 let config = {
   dev: process.env.NODE_ENV !== "production",
   port: args.port,
+  host: process.env.DB_HOST,
   mode: args.mode,
-  sessionSecret: process.env.SESSION_SECRET,
-  maxAge: process.env.TIEMPO_EXPIRACION,
-  facebookID: process.env.FACEBOOK_APP_ID,
-  facebookSecret: process.env.FACEBOOK_APP_SECRET,
   container_type: args.container_type,
 };
 
-let db = {
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  mongo_atlas: process.env.MONGO_ATLAS,
-  mongoAdvancedOptions: { useNewUrlParser: true, useUnifiedTopology: true },
-};
-
-export { config, db };
+export default config;

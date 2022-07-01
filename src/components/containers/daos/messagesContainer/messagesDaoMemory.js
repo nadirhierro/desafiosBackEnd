@@ -1,5 +1,4 @@
 import memoryContainer from "../../memoryContainer.js";
-import Joi from "joi";
 
 // Instancia empieza en null
 let instance = null;
@@ -34,6 +33,6 @@ export default class messagesDaoMemory extends memoryContainer {
       ...obj,
     };
     this.container.messages.push(newObject);
-    return id;
+    return newObject;
   }
 }
